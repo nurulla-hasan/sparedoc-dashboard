@@ -7,7 +7,7 @@ export default function RootLayout({ children }) {
                 position="top-center"
                 reverseOrder={false}
             />
-            <div className="bg-[#E6F8F7]">
+            <div className="bg-[#FDFDFD]">
                 {children}
             </div>
         </>

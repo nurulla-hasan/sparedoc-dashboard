@@ -24,13 +24,13 @@ const EditPassTab = ({ activeTab, handleSubmit, onSubmitPassword, register }) =>
                         <input
                             type={showPassword.current ? "text" : "password"}
                             {...register('currentPassword')}
-                            className="w-full border border-teal-400 rounded-md p-2 pr-10 outline-none"
+                            className="w-full border border-[#E0E0E0] rounded-md p-2 pr-10 outline-none"
                         />
                         <span
                             className="absolute right-3 top-10 cursor-pointer text-gray-500"
                             onClick={() => toggleShow("current")}
                         >
-                            {showPassword.current ? <FiEyeOff color="#1ac0b896" size={20}/> : <FiEye color="#1ac0b896" size={20}/>}
+                            {showPassword.current ?  <FiEye color="#818181" size={20}/>: <FiEyeOff color="#818181" size={20}/>}
                         </span>
                     </div>
 
@@ -40,13 +40,13 @@ const EditPassTab = ({ activeTab, handleSubmit, onSubmitPassword, register }) =>
                         <input
                             type={showPassword.new ? "text" : "password"}
                             {...register('newPassword')}
-                            className="w-full border border-teal-400 rounded-md p-2 pr-10 outline-none"
+                            className="w-full border border-[#E0E0E0] rounded-md p-2 pr-10 outline-none"
                         />
                         <span
                             className="absolute right-3 top-10 cursor-pointer text-gray-500"
                             onClick={() => toggleShow("new")}
                         >
-                            {showPassword.new ? <FiEyeOff color="#1ac0b896" size={20}/> : <FiEye color="#1ac0b896" size={20}/>}
+                            {showPassword.new ?  <FiEye color="#818181" size={20}/>: <FiEyeOff color="#818181" size={20}/>}
                         </span>
                     </div>
 
@@ -56,18 +56,18 @@ const EditPassTab = ({ activeTab, handleSubmit, onSubmitPassword, register }) =>
                         <input
                             type={showPassword.confirm ? "text" : "password"}
                             {...register('confirmPassword')}
-                            className="w-full border border-teal-400 rounded-md p-2 pr-10 outline-none"
+                            className="w-full border border-[#E0E0E0] rounded-md p-2 pr-10 outline-none"
                         />
                         <span
                             className="absolute right-3 top-10 cursor-pointer text-gray-500"
                             onClick={() => toggleShow("confirm")}
                         >
-                            {showPassword.confirm ? <FiEyeOff color="#1ac0b896" size={20}/> : <FiEye color="#1ac0b896" size={20}/>}
+                            {showPassword.confirm ?  <FiEye color="#818181" size={20}/>: <FiEyeOff color="#818181" size={20}/>}
                         </span>
                     </div>
 
                     <div className='w-full text-center'>
-                        <button type="submit" className="mt-4 px-8 bg-teal-500 hover:bg-teal-600 text-white py-2 rounded-md cursor-pointer">
+                        <button type="submit" className="mt-4 px-8 bg-[#DF5800] hover:bg-[#bf4a00] text-white py-2 rounded-md cursor-pointer">
                             Save Changes
                         </button>
                     </div>

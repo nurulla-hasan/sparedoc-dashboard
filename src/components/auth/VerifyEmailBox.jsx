@@ -59,11 +59,11 @@ const VerifyEmailForm = () => {
 
   return (
     <div className="flex items-center justify-center min-h-screen p-3 text-white">
-      <div className="border bg-[#FEFEFEE6] p-14 rounded-2xl w-full max-w-md">
+      <div className="bg-[#FEFEFEE6] p-14 rounded-2xl w-full max-w-md shadow-[0px_0px_6px_0px_#00000059]">
         <h1 className="text-2xl font-medium text-center text-[#333333] mb-4">
-          Check Your Email
+        Verification code
         </h1>
-        <p className="text-center text-[#333333] mb-16 max-w-xs text-xs">
+        <p className="text-center text-[#333333] mb-16 max-w-xs text-sm">
           We sent a code to your email address. Please enter the 6-digit code.
         </p>
 
@@ -79,7 +79,7 @@ const VerifyEmailForm = () => {
                 onChange={(e) => handleChange(index, e.target.value)}
                 onKeyDown={(e) => handleKeyDown(index, e)}
                 onPaste={index === 0 ? handlePaste : undefined}
-                className="w-10 h-10 text-center border border-[#00A89D] rounded-xl text-lg text-black font-normal focus:outline-none focus:border-[#00A89D]"
+                className="w-10 h-10 text-center border border-[#818181] rounded-xl text-lg text-black font-normal focus:outline-none focus:border-[#DF5800]"
               />
             ))}
           </div>
@@ -87,7 +87,7 @@ const VerifyEmailForm = () => {
           <button
             type="submit"
             disabled={isSubmitting || code.join("").length !== 6}
-            className="w-full bg-[#00A89D] border border-gray-400 disabled:cursor-not-allowed text-white py-2 text-xs px-4  hover:bg-[#428a86] transition duration-200 cursor-pointer disabled:opacity-70"
+            className="w-full bg-[#DF5800] hover:bg-[#bf4a00] rounded-sm disabled:cursor-not-allowed text-white py-2 text-xs px-4  transition duration-200 cursor-pointer disabled:opacity-70"
           >
             {isSubmitting ? "Verifying..." : "Verify"}
           </button>
@@ -97,7 +97,7 @@ const VerifyEmailForm = () => {
           Didn’t receive the code?{" "}
           <button
             onClick={handleResend}
-            className="text-[#00A89D] font-medium hover:underline cursor-pointer"
+            className="text-[#00B047] font-medium hover:underline cursor-pointer"
           >
             Resend
           </button>

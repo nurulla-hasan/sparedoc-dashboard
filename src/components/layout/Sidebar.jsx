@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { AnimatePresence, motion } from "framer-motion";
 import { IoIosArrowDown, IoIosArrowForward } from 'react-icons/io';
 import { LuSettings } from 'react-icons/lu';
-import { MdOutlineLogout } from 'react-icons/md';
+import { VscSignOut } from "react-icons/vsc";
 import { useDispatch } from 'react-redux';
 import { logout } from '@/redux/features/authSlice';
 import { useRouter } from 'next/navigation';
@@ -37,7 +37,7 @@ const Sidebar = ({ isHideLayout, menuItems, setSettingsOpen, settingsOpen, setti
                                     href={item.href}
                                     className={`pl-4 py-3 rounded-l-full transition-all duration-300 ${isActive
                                         ? "bg-[#F27405] text-white"
-                                        : "text-[#333333] hover:bg-[#F27405] hover:text-white"
+                                        : "text-[#5C5C5C] hover:bg-[#F27405] hover:text-white"
                                         }`}
                                 >
                                     <span className='flex items-center gap-2 text-sm'>
@@ -76,9 +76,9 @@ const Sidebar = ({ isHideLayout, menuItems, setSettingsOpen, settingsOpen, setti
                                                 <Link
                                                     key={item.label}
                                                     href={item.href}
-                                                    className={`pl-4 py-1.5 text-lg rounded-l-full transition-colors duration-200 ${isActive
-                                                        ? "bg-[#FCCEB0] text-[#333333]"
-                                                        : "text-[#333333] hover:bg-[#FCCEB0] hover:text-[#333333]"
+                                                    className={`pl-4 py-1.5 text-lg text-center rounded-l-full transition-colors duration-200 ${isActive
+                                                        ? "bg-[#FCCEB0] text-[#5C5C5C]"
+                                                        : "text-[#5C5C5C] hover:bg-[#FCCEB0] hover:text-[#333333]"
                                                         }`}
                                                 >
                                                     <span className='text-sm'>{item.label}</span>
@@ -92,8 +92,10 @@ const Sidebar = ({ isHideLayout, menuItems, setSettingsOpen, settingsOpen, setti
                     </nav>
                 </div>
 
-                <button onClick={handleLogout} className="text-[#F27405] bg-[#FEFEFE] text-sm py-3 flex gap-2 pl-3 mx-2 items-center cursor-pointer">
-                    <MdOutlineLogout size={20} />
+                <button
+                    onClick={handleLogout}
+                    className="text-[#F27405] bg-[#FEFEFE] text-sm py-3 flex gap-2 pl-6 mx-2 items-center cursor-pointer">
+                    <VscSignOut size={25} />
                     <span className='font-medium text-md'>Log out</span>
                 </button>
             </aside>

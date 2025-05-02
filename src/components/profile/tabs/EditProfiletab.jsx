@@ -14,7 +14,7 @@ const EditProfiletab = ({activeTab, handleSubmit, onSubmitProfile, register}) =>
                         <input
                             type="text"
                             {...register('name')}
-                            className="w-full border border-teal-400 rounded-md p-2 outline-none"
+                            className="w-full border border-[#E0E0E0] rounded-md p-2 outline-none"
                         />
                     </div>
 
@@ -24,7 +24,7 @@ const EditProfiletab = ({activeTab, handleSubmit, onSubmitProfile, register}) =>
                             type="email"
                             disabled 
                             {...register('email')}
-                            className="w-full border border-teal-400 rounded-md p-2 outline-none disabled:text-gray-400"
+                            className="w-full border border-[#E0E0E0] rounded-md p-2 outline-none disabled:text-gray-400"
                         />
                     </div>
 
@@ -33,7 +33,7 @@ const EditProfiletab = ({activeTab, handleSubmit, onSubmitProfile, register}) =>
                         <input
                             type="text"
                             {...register('contact')}
-                            className="w-full border border-teal-400 rounded-md p-2 outline-none"
+                            className="w-full border border-[#E0E0E0] rounded-md p-2 outline-none"
                         />
                     </div>
 
@@ -42,12 +42,12 @@ const EditProfiletab = ({activeTab, handleSubmit, onSubmitProfile, register}) =>
                         <input
                             type="text"
                             {...register('address')}
-                            className="w-full border border-teal-400 rounded-md p-2 outline-none"
+                            className="w-full border border-[#E0E0E0] rounded-md p-2 outline-none"
                         />
                     </div>
 
                     <div className='w-full text-center'>
-                        <button type="submit" className="mt-4 px-8 bg-teal-500 hover:bg-teal-600 text-white py-2 rounded-md cursor-pointer">
+                        <button type="submit" className="mt-4 px-8 bg-[#DF5800] hover:bg-[#bf4a00] text-white py-2 rounded-md cursor-pointer">
                             Save Changes
                         </button>
                     </div>

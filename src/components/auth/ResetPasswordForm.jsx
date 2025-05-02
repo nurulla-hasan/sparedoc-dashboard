@@ -27,13 +27,13 @@ const ResetPasswordForm = () => {
 
     setTimeout(() => {
       setIsSubmitting(false);
-      router.push("/auth/reset-success");
+      router.push("/");
     }, 1500);
   };
 
   return (
     <div className="flex items-center justify-center min-h-screen p-3 ">
-      <div className="border bg-[#FEFEFEE5] p-14 rounded-2xl w-full max-w-md">
+      <div className="shadow-[0px_0px_6px_0px_#00000059] bg-[#FEFEFEE5] p-14 rounded-2xl w-full max-w-md">
         <h1 className="text-2xl font-medium text-center text-[#333333] mb-4">
           Set a New Password
         </h1>
@@ -52,7 +52,7 @@ const ResetPasswordForm = () => {
                 id="password"
                 type={showPassword ? "text" : "password"}
                 placeholder="••••••••"
-                className={`w-full px-3 py-2 border text-[#5C5C5C] text-xs rounded-sm ${errors.password ? "border-red-500" : "border-[#00A89D]"
+                className={`w-full px-3 py-2 border text-[#5C5C5C] text-xs rounded-sm ${errors.password ? "border-red-500" : "border-[#E0E0E0]"
                   } focus:outline-none cursor-pointer`}
                 {...register("password", {
                   required: "Password is required",
@@ -68,9 +68,9 @@ const ResetPasswordForm = () => {
                 onClick={() => setShowPassword(!showPassword)}
               >
                 {showPassword ? (
-                  <PiEyeLight className="h-4 w-4 text-[#00A89D]" />
+                  <PiEyeLight className="h-4 w-4 text-[#636363]" />
                 ) : (
-                  <PiEyeSlash className="h-4 w-4 text-[#00A89D]" />
+                  <PiEyeSlash className="h-4 w-4 text-[#636363]" />
                 )}
               </button>
             </div>
@@ -87,7 +87,7 @@ const ResetPasswordForm = () => {
                 id="confirmPassword"
                 type={showConfirmPassword ? "text" : "password"}
                 placeholder="••••••••"
-                className={`w-full px-3 py-2 border  text-[#5C5C5C] text-xs rounded-sm ${errors.confirmPassword ? "border-red-500" : "border-[#00A89D]"
+                className={`w-full px-3 py-2 border  text-[#5C5C5C] text-xs rounded-sm ${errors.confirmPassword ? "border-red-500" : "border-[#E0E0E0]"
                   } focus:outline-none cursor-pointer`}
                 {...register("confirmPassword", {
                   required: "Please confirm your password",
@@ -100,9 +100,9 @@ const ResetPasswordForm = () => {
                 onClick={() => setShowConfirmPassword(!showConfirmPassword)}
               >
                 {showConfirmPassword ? (
-                  <PiEyeLight className="h-4 w-4 text-[#00A89D]" />
+                  <PiEyeLight className="h-4 w-4 text-[#636363]" />
                 ) : (
-                  <PiEyeSlash className="h-4 w-4 text-[#00A89D]" />
+                  <PiEyeSlash className="h-4 w-4 text-[#636363]" />
                 )}
               </button>
             </div>
@@ -112,7 +112,7 @@ const ResetPasswordForm = () => {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full bg-[#00A89D] border disabled:cursor-not-allowed border-gray-400 text-white py-2 text-xs px-4 hover:bg-[#428a85] transition duration-200 cursor-pointer disabled:opacity-70 rounded-sm"
+            className="w-full bg-[#DF5800] disabled:cursor-not-allowed text-white py-2 text-xs px-4 hover:bg-[#bf4a00] transition duration-200 cursor-pointer disabled:opacity-70 rounded-sm"
           >
             {isSubmitting ? "Processing..." : "Reset Password"}
           </button>

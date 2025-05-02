@@ -24,13 +24,15 @@ const Topbar = ({ isHideLayout }) => {
                         </button>
                     </div>
                     <div className="flex items-center gap-2">
-                        <Image
-                            src="/images/avatar.png"
-                            width={50}
-                            height={50}
-                            alt="User"
-                            className="rounded-full cursor-pointer"
-                        />
+                        <Link href="/profile">
+                            <Image
+                                src="/images/avatar.png"
+                                width={50}
+                                height={50}
+                                alt="User"
+                                className="rounded-full cursor-pointer"
+                            />
+                        </Link>
                         <span className="text-md font-medium text-[#333333]">{user?.name || "Golap Hasan"} </span>
                     </div>
                 </div>

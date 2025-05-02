@@ -38,7 +38,7 @@ const LoginFormContent = () => {
 
   return (
     <div className="flex items-center justify-center min-h-screen p-3 text-white">
-      <div className="border bg-[#FEFEFE] p-14 rounded-2xl w-full max-w-md">
+      <div className="bg-[#FEFEFE] p-14 rounded-2xl w-full max-w-md shadow-[0px_0px_6px_0px_#00000059]">
         <h1 className="text-2xl font-medium text-center text-[#333333] mb-4">Login to Account</h1>
         <p className="text-center text-[#333333] mb-6 text-sm">Please enter your email and password to continue</p>
 
@@ -52,7 +52,7 @@ const LoginFormContent = () => {
               type="email"
               placeholder="Enter your email"
               className={`w-full px-3 py-2 border  text-[#5C5C5C] text-xs bg-white rounded-sm ${
-                errors.email ? "border-red-500" : "border-[#00A89D]"
+                errors.email ? "border-red-500" : "border-[#E0E0E0]"
               } focus:outline-none cursor-pointer`}
               {...register("email", {
                 required: "Email is required",
@@ -75,7 +75,7 @@ const LoginFormContent = () => {
                 type={showPassword ? "text" : "password"}
                 placeholder="********"
                 className={`w-full px-3 py-2 border text-[#5C5C5C] text-xs bg-white rounded-sm ${
-                  errors.password ? "border-red-500" : "border-[#00A89D]"
+                  errors.password ? "border-red-500" : "border-[#E0E0E0]"
                 } focus:outline-none cursor-pointer`}
                 {...register("password", {
                   required: "Password is required",
@@ -87,9 +87,9 @@ const LoginFormContent = () => {
                 onClick={() => setShowPassword(!showPassword)}
               >
                 {showPassword ? (
-                  <PiEyeLight className="h-4 w-4 text-[#00A89D]" />
+                  <PiEyeLight className="h-4 w-4 text-[#909090]" />
                 ) : (
-                  <PiEyeSlash className="h-4 w-4 text-[#00A89D]" />
+                  <PiEyeSlash className="h-4 w-4 text-[#909090]" />
                 )}
               </button>
             </div>
@@ -103,7 +103,7 @@ const LoginFormContent = () => {
                 id="remember"
                 checked={rememberPassword}
                 onChange={() => setRememberPassword(!rememberPassword)}
-                className="h-3 w-3 text-[#00A89D] accent-[#079891] cursor-pointer"
+                className="h-3 w-3 accent-[#DF5800] cursor-pointer"
               />
               <label htmlFor="remember" className="ml-2 text-xs text-[#333333]">
                 Remember Password
@@ -116,7 +116,7 @@ const LoginFormContent = () => {
 
           <button
             type="submit"
-            className="w-full bg-[#00A89D] text-white py-2 text-xs px-4 hover:bg-[#428a85] transition duration-200 cursor-pointer rounded-sm"
+            className="w-full bg-[#DF5800] text-white py-2 text-xs px-4 hover:bg-[#bf4a00] transition duration-200 cursor-pointer rounded-sm"
           >
             Sign in
           </button>
