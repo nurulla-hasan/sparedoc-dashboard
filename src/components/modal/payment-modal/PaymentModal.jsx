@@ -1,10 +1,10 @@
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
-const PaymentModal = ({ showModal, selectedUser, handleReject, handleAccept }) => {
+const PaymentModal = ({ isPaymentModal, selectedUser, handleReject, handleAccept }) => {
     return (
         <AnimatePresence>
-            {showModal && selectedUser && (
+            {isPaymentModal && selectedUser && (
                 <motion.div
                     className="fixed h-[100vh] inset-0 flex justify-center items-center bg-black/50 bg-opacity-50 z-50"
                     initial={{ opacity: 0 }}
@@ -13,7 +13,7 @@ const PaymentModal = ({ showModal, selectedUser, handleReject, handleAccept }) =
                     transition={{ duration: 0.1 }}
                 >
                     <motion.div
-                        className="bg-white rounded-xl min-w-lg p-4"
+                        className="bg-white rounded-md min-w-lg p-4"
                         initial={{ scale: 0.8 }}
                         animate={{ scale: 1 }}
                         exit={{ scale: 0.8 }}
