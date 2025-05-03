@@ -1,6 +1,6 @@
 import { SlEye } from "react-icons/sl";
 
-const OrderTable = ({ paged, handleBlock }) => {
+const OrderTable = ({ paged }) => {
     return (
         <>
             <table className="min-w-full text-sm ">
@@ -33,8 +33,6 @@ const OrderTable = ({ paged, handleBlock }) => {
                                 >
                                     <SlEye size={20} color="#F27405" />
                                 </button>
-
-
                             </td>
                         </tr>
                     ))}

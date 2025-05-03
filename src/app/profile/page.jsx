@@ -44,7 +44,7 @@ const Page = () => {
 
     return (
         <PageContainer>
-            <div className='bg-[#FDFDFD] p-5 h-[calc(100vh-136px)] overflow-y-scroll scrl-hide'>
+            <div className='bg-[#FDFDFD] p-4 h-[calc(100vh-136px)] overflow-y-scroll scrl-hide'>
                 <motion.h1
                     className='text-xl font-medium sticky top-0'
                     initial={{ opacity: 0, y: -10 }}

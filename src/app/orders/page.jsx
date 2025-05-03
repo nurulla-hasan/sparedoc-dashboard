@@ -12,33 +12,9 @@ import toast from "react-hot-toast";
 export default function Orders() {
   const pageSize = 10;
   const [page, setPage] = useState(1);
-  const [query, setQuery] = useState("");
-  const [data, setData] = useState(orders);
 
-  /* block / unblock toggle */
-  const handleBlock = (id) => {
-
-    const updated = data.map((user) =>
-      user.id === id ? { ...user, blocked: !user.blocked } : user
-    );
-
-    const updatedUser = updated.find((user) => user.id === id);
-
-    if (updatedUser.blocked) {
-      toast.success(`${updatedUser.name.slice(0, 8)}... has been Blocked`)
-    } else {
-      toast.success(`${updatedUser.name.slice(0, 8)}... has been Unblocked`)
-    }
-    setData(updated);
-  };
-
-
-  /* filter + paginate */
-  const filtered = data.filter((u) =>
-    u.name.toLowerCase().includes(query.toLowerCase())
-  );
-  const pageCount = Math.ceil(filtered.length / pageSize);
-  const paged = filtered.slice((page - 1) * pageSize, page * pageSize);
+  const pageCount = Math.ceil(orders.length / pageSize);
+  const paged = orders.slice((page - 1) * pageSize, page * pageSize);
 
   return (
     <PageContainer>
@@ -60,7 +36,7 @@ export default function Orders() {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.2, duration: 0.5 }}
       >
-        <OrderTable paged={paged} handleBlock={handleBlock} />
+        <OrderTable paged={paged} />
       </motion.div>
 
       {/* pagination */}
@@ -71,7 +47,7 @@ export default function Orders() {
         transition={{ delay: 0.4, duration: 0.4 }}
       >
         <span className="text-[#F27405] font-medium">
-          Showing {(page - 1) * pageSize + 1}-{Math.min(page * pageSize, filtered.length)} of {filtered.length}
+          Showing {(page - 1) * pageSize + 1}-{Math.min(page * pageSize, orders.length)} of {orders.length}
         </span>
 
         <div className="flex items-center gap-2">

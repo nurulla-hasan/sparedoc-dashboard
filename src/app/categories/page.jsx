@@ -17,7 +17,7 @@ export default function CategoryManagement() {
     const [editIndex, setEditIndex] = useState(null);
 
     const [page, setPage] = useState(1);
-    const categoriesPerPage = 20;
+    const categoriesPerPage = 12;
     const pageCount = Math.ceil(categories.length / categoriesPerPage);
     const paginatedCategories = categories.slice(
         (page - 1) * categoriesPerPage,
@@ -72,83 +72,86 @@ export default function CategoryManagement() {
 
     return (
         <PageContainer>
-            {/* Header */}
-            <motion.div
-                className="flex justify-between bg-[#f8f8f8] mb-4"
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4 }}
-            >
-                <h1 className="text-xl font-medium text-[#333333]">
-                    Category Management
-                </h1>
-                <button
-                    className="bg-teal-500 text-white px-4 py-2 rounded flex items-center gap-1 cursor-pointer"
-                    onClick={handleAddNew}
-                >
-                    <HiOutlinePlusSm size={20} color="#ffffff" />
-                    Add Category
-                </button>
-            </motion.div>
-
-            {/* Cards + Pagination Section */}
-            <div className="flex flex-col justify-between h-[79vh]">
+            <div className="bg-[#FDFDFD] p-4 rounded-md">
+                {/* Header */}
                 <motion.div
-                    className="overflow-auto p-1 scrl-hide grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.2, duration: 0.5 }}
-                >
-                    {paginatedCategories.length === 0 ? (
-                        <div className="col-span-full row-span-full flex justify-center items-center">
-                            <div>No Categories Available</div>
-                        </div>
-                    ) : (
-                        paginatedCategories.map((cat, idx) => (
-                            <motion.div
-                                key={idx}
-                                initial={{ opacity: 0, scale: 0.95 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                transition={{ delay: idx * 0.03 }}
-                            >
-                                <Card
-                                    handleEdit={handleEdit}
-                                    handleDelete={handleDelete}
-                                    cat={cat}
-                                    idx={idx}
-                                />
-                            </motion.div>
-                        ))
-                    )}
-                </motion.div>
-
-                {/* Pagination */}
-                <motion.div
-                    className="flex justify-evenly items-center text-sm mt-4"
-                    initial={{ opacity: 0, y: 10 }}
+                    className="flex justify-between mb-4"
+                    initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.4, duration: 0.4 }}
+                    transition={{ duration: 0.4 }}
                 >
-                    <span className="text-[#00A89D]">
-                        Showing {(page - 1) * categoriesPerPage + 1}-{Math.min(page * categoriesPerPage, categories.length)} of {categories.length}
-                    </span>
-
-                    <div className="flex items-center gap-2">
-                        <Pagination page={page} setPage={setPage} pageCount={pageCount} />
-                    </div>
+                    <h1 className="text-xl font-medium text-[#333333]">
+                    Manage Services Category
+                    </h1>
+                    <button
+                        className="bg-[#F27405] text-white px-4 py-2 rounded flex items-center gap-1 cursor-pointer"
+                        onClick={handleAddNew}
+                    >
+                        <HiOutlinePlusSm size={20} color="#ffffff" />
+                        Add Service
+                    </button>
                 </motion.div>
+
+                {/* Cards + Pagination Section */}
+                <div className="flex flex-col justify-between h-[76vh]">
+                    <motion.div
+                        className="overflow-auto p-1 scrl-hide grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 0.2, duration: 0.5 }}
+                    >
+                        {paginatedCategories.length === 0 ? (
+                            <div className="col-span-full row-span-full h-[60vh] flex justify-center items-center">
+                                <div>No Categories Available</div>
+                            </div>
+                        ) : (
+                            paginatedCategories.map((cat, idx) => (
+                                <motion.div
+                                    key={idx}
+                                    initial={{ opacity: 0, scale: 0.95 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    transition={{ delay: idx * 0.03 }}
+                                >
+                                    <Card
+                                        handleEdit={handleEdit}
+                                        handleDelete={handleDelete}
+                                        cat={cat}
+                                        idx={idx}
+                                    />
+                                </motion.div>
+                            ))
+                        )}
+                    </motion.div>
+
+                    {/* Pagination */}
+                    <motion.div
+                        className="flex justify-evenly items-center text-sm mt-4"
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.4, duration: 0.4 }}
+                    >
+                        <span className="text-[#734D2C]">
+                            Showing {(page - 1) * categoriesPerPage + 1}-{Math.min(page * categoriesPerPage, categories.length)} of {categories.length}
+                        </span>
+
+                        <div className="flex items-center gap-2">
+                            <Pagination page={page} setPage={setPage} pageCount={pageCount} />
+                        </div>
+                    </motion.div>
+                </div>
+
+                {/* Modal */}
+                <CategoryModal
+                    setIsModalOpen={setIsModalOpen}
+                    isModalOpen={isModalOpen}
+                    setCategoryName={setCategoryName}
+                    editMode={editMode}
+                    categoryName={categoryName}
+                    handleIconUpload={handleIconUpload}
+                    handleSubmit={handleSubmit}
+                />
             </div>
 
-            {/* Modal */}
-            <CategoryModal
-                setIsModalOpen={setIsModalOpen}
-                isModalOpen={isModalOpen}
-                setCategoryName={setCategoryName}
-                editMode={editMode}
-                categoryName={categoryName}
-                handleIconUpload={handleIconUpload}
-                handleSubmit={handleSubmit}
-            />
         </PageContainer>
     );
 }

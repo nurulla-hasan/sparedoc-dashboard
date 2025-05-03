@@ -33,16 +33,12 @@ export default function OrderDetails() {
   };
 
 
-  /* filter + paginate */
-  const filtered = data.filter((user) => {
-    const searchText = query.toLowerCase();
-    return (
-      user?.name.toLowerCase().includes(searchText)
-      ||
-      user?.location.toLowerCase().includes(searchText)
-    )
-  }
-  );
+  const filtered = data.filter((user) =>
+    user.name.toLowerCase().includes(query.toLowerCase())
+    ||
+    user.location.toLowerCase().includes(query.toLowerCase())
+    ||
+    user.email.toLowerCase().includes(query.toLowerCase()));
 
   const pageCount = Math.ceil(filtered.length / pageSize);
   const paged = filtered.slice((page - 1) * pageSize, page * pageSize);

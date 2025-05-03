@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaRegImage } from 'react-icons/fa';
-import { MdOutlineArrowBack } from "react-icons/md";
-import { motion, AnimatePresence } from "framer-motion"; // Import Framer Motion components
+import { RxCross2 } from "react-icons/rx";
+import { motion, AnimatePresence } from "framer-motion";
 
 const CategoryModal = ({
     setIsModalOpen,
@@ -22,20 +22,21 @@ const CategoryModal = ({
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.1 }}
                 >
+
                     <motion.div
-                        className="bg-white text-[#333333] p-8 rounded-lg w-[500px] shadow-lg"
+                        className="bg-white text-[#333333] p-8 rounded-lg w-[500px] shadow-lg relative"
                         initial={{ scale: 0.8 }}
                         animate={{ scale: 1 }}
                         exit={{ scale: 0.8 }}
                         transition={{ duration: 0.1 }}
                     >
+                        <RxCross2
+                            onClick={() => setIsModalOpen(false)}
+                            className="cursor-pointer absolute top-4 right-4"
+                            color="#aeaeae"
+                            size={22}
+                        />
                         <h2 className="text-lg font-medium flex items-center justify-center gap-2 mb-6">
-                            <MdOutlineArrowBack
-                                onClick={() => setIsModalOpen(false)}
-                                className="cursor-pointer"
-                                color="#333333"
-                                size={20}
-                            />
                             {editMode ? "Edit Category" : "Add New Category"}
                         </h2>
 
@@ -47,7 +48,7 @@ const CategoryModal = ({
                                 type="text"
                                 value={categoryName}
                                 onChange={(e) => setCategoryName(e.target.value)}
-                                className="w-full border border-[#00A89D] px-3 py-2 rounded outline-none"
+                                className="w-full border border-[#FEEFE6] px-3 py-2 rounded outline-none"
                                 placeholder="Enter category name"
                             />
                         </div>
@@ -59,19 +60,19 @@ const CategoryModal = ({
                                 type="file"
                                 accept="image/*"
                                 onChange={handleIconUpload}
-                                className="w-full border border-[#00A89D] px-3 py-2 rounded outline-none cursor-pointer text-[15px] text-[#3333339b]"
+                                className="w-full border border-[#FEEFE6] px-3 py-2 rounded outline-none cursor-pointer text-[15px] text-[#3333339b]"
                                 id="icon-upload"
                             />
                             <FaRegImage
                                 className="absolute top-10 right-3"
                                 size={20}
-                                color="#00A89D"
+                                color="#F27405"
                             />
                         </div>
 
                         <button
                             onClick={handleSubmit}
-                            className="bg-[#00A89D] text-white w-full py-2 rounded font-medium cursor-pointer"
+                            className="bg-[#F27405] text-white w-full py-2 rounded font-medium cursor-pointer"
                         >
                             {editMode ? "Update" : "Add Category"}
                         </button>

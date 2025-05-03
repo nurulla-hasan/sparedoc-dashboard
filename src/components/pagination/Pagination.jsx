@@ -65,7 +65,7 @@ export default function Pagination({ page, setPage, pageCount }) {
             )}
 
             <button
-                disabled={page === pageCount}
+                disabled={page === pageCount || pages.length === 0}
                 onClick={() => setPage(page + 1)}
                 className="px-3 py-1 text-sm disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer transition-all duration-300"
             >
