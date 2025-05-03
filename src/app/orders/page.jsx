@@ -17,21 +17,21 @@ export default function Orders() {
 
   /* block / unblock toggle */
   const handleBlock = (id) => {
-  
+
     const updated = data.map((user) =>
       user.id === id ? { ...user, blocked: !user.blocked } : user
     );
-    
+
     const updatedUser = updated.find((user) => user.id === id);
-    
-    if(updatedUser.blocked){
+
+    if (updatedUser.blocked) {
       toast.success(`${updatedUser.name.slice(0, 8)}... has been Blocked`)
-    }else{
+    } else {
       toast.success(`${updatedUser.name.slice(0, 8)}... has been Unblocked`)
     }
     setData(updated);
   };
-  
+
 
   /* filter + paginate */
   const filtered = data.filter((u) =>
@@ -45,24 +45,12 @@ export default function Orders() {
 
       {/* header + search */}
       <motion.div
-        className="flex justify-between mb-4"
+        className="mb-4"
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4 }}
       >
-        <h1 className="text-xl font-medium">All Seller list</h1>
-        <div className="relative w-72">
-          <FiSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-[#ffbc89]" size={18} />
-          <input
-            placeholder="Search by Name..."
-            value={query}
-            onChange={(e) => {
-              setPage(1);
-              setQuery(e.target.value);
-            }}
-            className="w-full pl-10 pr-4 py-1 rounded-md border border-[#ffdec4] focus:outline-none placeholder:text-sm"
-          />
-        </div>
+        <h1 className="text-xl text-start font-medium">All Seller list</h1>
       </motion.div>
 
       {/* table */}

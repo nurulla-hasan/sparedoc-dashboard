@@ -17,26 +17,33 @@ export default function OrderDetails() {
 
   /* block / unblock toggle */
   const handleBlock = (id) => {
-  
+
     const updated = data.map((user) =>
       user.id === id ? { ...user, blocked: !user.blocked } : user
     );
-    
+
     const updatedUser = updated.find((user) => user.id === id);
-    
-    if(updatedUser.blocked){
+
+    if (updatedUser.blocked) {
       toast.success(`${updatedUser.name.slice(0, 8)}... has been Blocked`)
-    }else{
+    } else {
       toast.success(`${updatedUser.name.slice(0, 8)}... has been Unblocked`)
     }
     setData(updated);
   };
-  
+
 
   /* filter + paginate */
-  const filtered = data.filter((u) =>
-    u.name.toLowerCase().includes(query.toLowerCase())
+  const filtered = data.filter((user) => {
+    const searchText = query.toLowerCase();
+    return (
+      user?.name.toLowerCase().includes(searchText)
+      ||
+      user?.location.toLowerCase().includes(searchText)
+    )
+  }
   );
+
   const pageCount = Math.ceil(filtered.length / pageSize);
   const paged = filtered.slice((page - 1) * pageSize, page * pageSize);
 
@@ -54,7 +61,7 @@ export default function OrderDetails() {
         <div className="relative w-72">
           <FiSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-[#ffbc89]" size={18} />
           <input
-            placeholder="Search here..."
+            placeholder="Search Name or Location"
             value={query}
             onChange={(e) => {
               setPage(1);

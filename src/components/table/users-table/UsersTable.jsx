@@ -1,4 +1,3 @@
-import { LuUserCheck } from "react-icons/lu";
 import { MdBlockFlipped } from "react-icons/md";
 
 const UsersTable = ({ paged, handleBlock }) => {
