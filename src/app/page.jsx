@@ -66,7 +66,7 @@ export default function Home() {
             <div className="p-2 px-4 pb-0">
               <h2 className="text-lg font-medium">Recent Users Feedback</h2>
             </div>
-            <div className="overflow-scroll h-[27vh] scrl-hide">
+            <div className="overflow-scroll h-[31vh] scrl-hide">
               <table className="w-full text-sm text-left">
                 <thead className="text-[#DF5800] bg-[#FEF1E6] text-[16px] sticky top-0">
                   <tr>

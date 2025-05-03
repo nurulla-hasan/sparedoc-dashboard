@@ -17,8 +17,8 @@ import Sidebar from '@/components/layout/Sidebar';
 
 const menuItems = [
   { label: "Dashboard", href: "/", icon: <LuLayoutDashboard size={20} /> },
-  { label: "Orders", href: "/users", icon: <BsCartCheck size={20} /> },
-  { label: "User Details", href: "/order-details", icon: <AiOutlineUser size={20} /> },
+  { label: "Orders", href: "/orders", icon: <BsCartCheck size={20} /> },
+  { label: "User Details", href: "/user-details", icon: <AiOutlineUser size={20} /> },
   { label: "Sellers Details", href: "/sellers-details", icon: <LuBookUser size={20} /> },
   { label: "Category", href: "/categories", icon: <MdOutlineCategory size={20} /> },
   { label: "Payment", href: "/payments", icon: <GiTakeMyMoney size={20} /> },

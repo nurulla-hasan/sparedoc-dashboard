@@ -1,16 +1,16 @@
 "use client";
 import PageContainer from "@/components/container/PageContainer";
 import Pagination from "@/components/pagination/Pagination";
-import UserTable from "@/components/table/user-table/UserTable";
 import { users } from "@/data/data";
 import { useState } from "react";
 import { FiSearch } from "react-icons/fi";
 import { motion } from "framer-motion";
 import toast from "react-hot-toast";
+import UsersTable from "@/components/table/users-table/UsersTable";
 
 
-export default function Users() {
-  const pageSize = 9;
+export default function OrderDetails() {
+  const pageSize = 10;
   const [page, setPage] = useState(1);
   const [query, setQuery] = useState("");
   const [data, setData] = useState(users);
@@ -50,9 +50,9 @@ export default function Users() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4 }}
       >
-        <h1 className="text-xl font-medium">User Management</h1>
+        <h1 className="text-xl font-medium">All User list</h1>
         <div className="relative w-72">
-          <FiSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
+          <FiSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-[#ffbc89]" size={18} />
           <input
             placeholder="Search here..."
             value={query}
@@ -60,7 +60,7 @@ export default function Users() {
               setPage(1);
               setQuery(e.target.value);
             }}
-            className="w-full pl-10 pr-4 py-2 rounded-md border border-[#00A89D] focus:outline-none"
+            className="w-full pl-10 pr-4 py-1 rounded-md border border-[#ffdec4] focus:outline-none placeholder:text-sm"
           />
         </div>
       </motion.div>
@@ -72,7 +72,7 @@ export default function Users() {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.2, duration: 0.5 }}
       >
-        <UserTable paged={paged} handleBlock={handleBlock} />
+        <UsersTable paged={paged} handleBlock={handleBlock} />
       </motion.div>
 
       {/* pagination */}
@@ -82,7 +82,7 @@ export default function Users() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4, duration: 0.4 }}
       >
-        <span className="text-[#00A89D]">
+        <span className="text-[#F27405] font-medium">
           Showing {(page - 1) * pageSize + 1}-{Math.min(page * pageSize, filtered.length)} of {filtered.length}
         </span>
 

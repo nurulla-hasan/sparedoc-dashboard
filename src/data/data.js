@@ -48,6 +48,145 @@ export const feedbackData = [
 ]
 
 
+export const orders = [
+    {
+      id: "#526525",
+      name: "Jenny Wilson",
+      avatar: "/images/avatar.png",
+      phone: "(+33)7005-55927",
+      productName: "Spark Plug",
+      amount: "$100",
+      blocked: false,
+    },
+    {
+      id: "#526526",
+      name: "John Doe",
+      avatar: "/images/avatar.png",
+      phone: "(+33)7005-55928",
+      productName: "Car Battery",
+      amount: "$150",
+      blocked: false,
+    },
+    {
+      id: "#526527",
+      name: "Sarah Lee",
+      avatar: "/images/avatar.png",
+      phone: "(+33)7005-55929",
+      productName: "Alternator",
+      amount: "$120",
+      blocked: true,
+    },
+    {
+      id: "#526528",
+      name: "David Clark",
+      avatar: "/images/avatar.png",
+      phone: "(+33)7005-55930",
+      productName: "Brake Pads",
+      amount: "$80",
+      blocked: false,
+    },
+    {
+      id: "#526529",
+      name: "Emily Moore",
+      avatar: "/images/avatar.png",
+      phone: "(+33)7005-55931",
+      productName: "Suspension Kit",
+      amount: "$200",
+      blocked: false,
+    },
+    {
+      id: "#526530",
+      name: "Michael Smith",
+      avatar: "/images/avatar.png",
+      phone: "(+33)7005-55932",
+      productName: "Timing Belt",
+      amount: "$90",
+      blocked: true,
+    },
+    {
+      id: "#526531",
+      name: "Anna Brown",
+      avatar: "/images/avatar.png",
+      phone: "(+33)7005-55933",
+      productName: "Fuel Filter",
+      amount: "$40",
+      blocked: false,
+    },
+    {
+      id: "#526532",
+      name: "Chris Adams",
+      avatar: "/images/avatar.png",
+      phone: "(+33)7005-55934",
+      productName: "Oil Filter",
+      amount: "$30",
+      blocked: true,
+    },
+    {
+      id: "#526533",
+      name: "Karen Evans",
+      avatar: "/images/avatar.png",
+      phone: "(+33)7005-55935",
+      productName: "Air Filter",
+      amount: "$20",
+      blocked: false,
+    },
+    {
+      id: "#526534",
+      name: "Steven Harris",
+      avatar: "/images/avatar.png",
+      phone: "(+33)7005-55936",
+      productName: "Car Battery",
+      amount: "$170",
+      blocked: false,
+    },
+    {
+      id: "#526535",
+      name: "Olivia Jackson",
+      avatar: "/images/avatar.png",
+      phone: "(+33)7005-55937",
+      productName: "Brake Fluid",
+      amount: "$60",
+      blocked: true,
+    },
+    {
+      id: "#526536",
+      name: "Liam Walker",
+      avatar: "/images/avatar.png",
+      phone: "(+33)7005-55938",
+      productName: "Windshield Wipers",
+      amount: "$25",
+      blocked: false,
+    },
+    {
+      id: "#526537",
+      name: "Sophia Young",
+      avatar: "/images/avatar.png",
+      phone: "(+33)7005-55939",
+      productName: "Spark Plug",
+      amount: "$105",
+      blocked: true,
+    },
+    {
+      id: "#526538",
+      name: "Mason King",
+      avatar: "/images/avatar.png",
+      phone: "(+33)7005-55940",
+      productName: "Timing Belt",
+      amount: "$90",
+      blocked: false,
+    },
+    {
+      id: "#526539",
+      name: "Charlotte Scott",
+      avatar: "/images/avatar.png",
+      phone: "(+33)7005-55941",
+      productName: "Air Filter",
+      amount: "$30",
+      blocked: false,
+    }
+  ];
+
+
 export const users = [
   {
     id: "#526525",
@@ -185,6 +324,8 @@ export const users = [
     "blocked": false,
   },
 ];
+
+
 export const consult = [
   {
     id: "#526525",

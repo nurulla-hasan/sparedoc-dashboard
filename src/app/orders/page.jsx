@@ -1,40 +1,39 @@
 "use client";
 import PageContainer from "@/components/container/PageContainer";
-import ConsultantModal from "@/components/modal/consultant-modal/ConsultantModal";
 import Pagination from "@/components/pagination/Pagination";
-import ConsultTable from "@/components/table/users-table/UsersTable";
-import { consult } from "@/data/data";
+import OrderTable from "@/components/table/orders-table/OrderTable";
+import { orders } from "@/data/data";
 import { useState } from "react";
 import { FiSearch } from "react-icons/fi";
 import { motion } from "framer-motion";
+import toast from "react-hot-toast";
 
 
-export default function Consults() {
-  const pageSize = 8;
+export default function Orders() {
+  const pageSize = 10;
   const [page, setPage] = useState(1);
   const [query, setQuery] = useState("");
-  const [data, setData] = useState(consult);
-  const [selectedUser, setSelectedUser] = useState(null);
-  const [showModal, setShowModal] = useState(false);
+  const [data, setData] = useState(orders);
 
-  const handleModalOpen = (user) => {
-    setSelectedUser(user);
-    setShowModal(true);
-  };
-
-  const handleAccept = () => {
-    setData((prev) =>
-      prev.map((u) =>
-        u.id === selectedUser.id ? { ...u, verified: true } : u
-      )
+  /* block / unblock toggle */
+  const handleBlock = (id) => {
+  
+    const updated = data.map((user) =>
+      user.id === id ? { ...user, blocked: !user.blocked } : user
     );
-    setShowModal(false);
+    
+    const updatedUser = updated.find((user) => user.id === id);
+    
+    if(updatedUser.blocked){
+      toast.success(`${updatedUser.name.slice(0, 8)}... has been Blocked`)
+    }else{
+      toast.success(`${updatedUser.name.slice(0, 8)}... has been Unblocked`)
+    }
+    setData(updated);
   };
+  
 
-  const handleReject = () => {
-    setShowModal(false);
-  };
-
+  /* filter + paginate */
   const filtered = data.filter((u) =>
     u.name.toLowerCase().includes(query.toLowerCase())
   );
@@ -43,6 +42,7 @@ export default function Consults() {
 
   return (
     <PageContainer>
+
       {/* header + search */}
       <motion.div
         className="flex justify-between mb-4"
@@ -50,38 +50,30 @@ export default function Consults() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4 }}
       >
-        <h1 className="text-xl font-medium">Consultant Management</h1>
+        <h1 className="text-xl font-medium">All Seller list</h1>
         <div className="relative w-72">
-          <FiSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
+          <FiSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-[#ffbc89]" size={18} />
           <input
-            placeholder="Search here..."
+            placeholder="Search by Name..."
             value={query}
             onChange={(e) => {
               setPage(1);
               setQuery(e.target.value);
             }}
-            className="w-full pl-10 pr-4 py-2 rounded-md border border-[#00A89D] focus:outline-none"
+            className="w-full pl-10 pr-4 py-1 rounded-md border border-[#ffdec4] focus:outline-none placeholder:text-sm"
           />
         </div>
       </motion.div>
 
       {/* table */}
       <motion.div
-        className="overflow-x-auto h-[74vh] scrl-hide rounded-md border border-gray-200"
+        className="overflow-auto h-[74vh] scrl-hide rounded-md border border-gray-200"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.2, duration: 0.5 }}
       >
-        <ConsultTable paged={paged} handleModalOpen={handleModalOpen} />
+        <OrderTable paged={paged} handleBlock={handleBlock} />
       </motion.div>
-
-      {/* Modal */}
-      <ConsultantModal
-        showModal={showModal}
-        selectedUser={selectedUser}
-        handleReject={handleReject}
-        handleAccept={handleAccept}
-      />
 
       {/* pagination */}
       <motion.div
@@ -90,9 +82,10 @@ export default function Consults() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4, duration: 0.4 }}
       >
-        <span className="text-[#00A89D]">
+        <span className="text-[#F27405] font-medium">
           Showing {(page - 1) * pageSize + 1}-{Math.min(page * pageSize, filtered.length)} of {filtered.length}
         </span>
+
         <div className="flex items-center gap-2">
           <Pagination page={page} setPage={setPage} pageCount={pageCount} />
         </div>

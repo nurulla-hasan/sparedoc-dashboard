@@ -22,7 +22,7 @@ export default function Pagination({ page, setPage, pageCount }) {
             <button
                 disabled={page === 1}
                 onClick={() => setPage(page - 1)}
-                className="disabled:text-gray-400 disabled:cursor-not-allowed cursor-pointer text-sm"
+                className="disabled:text-gray-400 disabled:cursor-not-allowed cursor-pointer text-sm transition-all duration-300"
             >
                 &lt; Prev
             </button>
@@ -31,7 +31,7 @@ export default function Pagination({ page, setPage, pageCount }) {
                 <>
                     <button
                         onClick={() => setPage(1)}
-                        className="w-6 h-6 rounded-full text-center text-sm cursor-pointer"
+                        className="w-6 h-6 rounded-full text-center text-sm cursor-pointer transition-all duration-300"
                     >
                         1
                     </button>
@@ -43,8 +43,8 @@ export default function Pagination({ page, setPage, pageCount }) {
                 <button
                     key={p}
                     onClick={() => setPage(p)}
-                    className={`w-6 h-6 rounded-full text-center text-sm cursor-pointer ${p === page
-                        ? "bg-teal-600 text-white"
+                    className={`w-4.5 h-4.5 rounded-full text-center text-xs font-medium cursor-pointer transition-all duration-300 ${p === page
+                        ? "bg-[#F27405] text-white"
                         : ""
                         }`}
                 >
@@ -57,7 +57,7 @@ export default function Pagination({ page, setPage, pageCount }) {
                     <span>...</span>
                     <button
                         onClick={() => setPage(pageCount)}
-                        className="w-7 h-7 rounded-full text-center text-sm cursor-pointer"
+                        className="w-7 h-7 rounded-full text-center text-sm cursor-pointer transition-all duration-300"
                     >
                         {pageCount}
                     </button>
@@ -67,7 +67,7 @@ export default function Pagination({ page, setPage, pageCount }) {
             <button
                 disabled={page === pageCount}
                 onClick={() => setPage(page + 1)}
-                className="px-3 py-1 text-sm disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
+                className="px-3 py-1 text-sm disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer transition-all duration-300"
             >
                 Next &gt;
             </button>
