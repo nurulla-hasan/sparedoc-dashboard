@@ -1,5 +1,6 @@
 import { FaCircle } from "react-icons/fa";
 import { MdOutlineArrowOutward } from "react-icons/md";
+import { IoCheckmarkDoneOutline } from "react-icons/io5";
 
 const PaymentTable = ({ paged, handleModal }) => {
     return (
@@ -42,10 +43,19 @@ const PaymentTable = ({ paged, handleModal }) => {
                             <td className="px-4 py-3 flex justify-center">
                                 <button
                                     onClick={() => handleModal(user)}
-                                    className={`px-2 py-1 flex items-center gap-1 justify-center rounded-sm cursor-pointer transition-all duration-300 bg-[#f0f0f0]`}
+                                    disabled={user.paymentStatus}
+                                    className={`flex items-center gap-1 justify-center rounded-sm cursor-pointer transition-all duration-300  disabled:cursor-not-allowed ${user.paymentStatus ? 'bg-green-100 border-green-500 border py-1 px-2':'bg-[#f0f0f0] border border-gray-400 py-1 px-2'}`}
                                 >
                                     <span>
-                                        <MdOutlineArrowOutward size={24} />
+                                        {
+                                            user.paymentStatus
+                                                ?
+                                                <IoCheckmarkDoneOutline
+                                                    color="#00B047"
+                                                    size={24} />
+                                                :
+                                                <MdOutlineArrowOutward size={24} />
+                                        }
                                     </span>
                                 </button>
                             </td>

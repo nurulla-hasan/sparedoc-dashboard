@@ -5,7 +5,7 @@ const Card = ({ handleDelete, handleEdit, cat, idx }) => {
         <>
             <div className="bg-[#F6F6F6] p-4 rounded flex flex-col justify-center items-center h-fit">
                 <div className="flex gap-2 mb-2">
-                    <div className="bg-white px-8 py-4 pb-1 rounded-md">
+                    {/* <div className="bg-white px-8 py-4 pb-1 rounded-md">
                         <Image
                             src={cat?.icon}
                             alt={cat.name}
@@ -13,7 +13,7 @@ const Card = ({ handleDelete, handleEdit, cat, idx }) => {
                             height={200}
                             className="w-16 h-16 mx-auto mb-2 grayscale"
                         />
-                    </div>
+                    </div> */}
                     <div className="bg-white px-8 py-4 pb-1 rounded-md">
                         <Image
                             src={cat?.icon}

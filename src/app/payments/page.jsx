@@ -54,8 +54,6 @@ export default function PaymentDetails() {
   const filtered = data.filter((user) =>
     user.name.toLowerCase().includes(query.toLowerCase())
     ||
-    user.location.toLowerCase().includes(query.toLowerCase())
-    ||
     user.email.toLowerCase().includes(query.toLowerCase()));
 
   const pageCount = Math.ceil(filtered.length / pageSize);
@@ -75,7 +73,7 @@ export default function PaymentDetails() {
         <div className="relative w-72">
           <FiSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-[#ffbc89]" size={18} />
           <input
-            placeholder="Search Name or Location"
+            placeholder="Search Name or Email"
             value={query}
             onChange={(e) => {
               setPage(1);

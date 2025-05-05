@@ -6,20 +6,20 @@ const PaymentModal = ({ isPaymentModal, selectedUser, handleReject, handleAccept
         <AnimatePresence>
             {isPaymentModal && selectedUser && (
                 <motion.div
-                    className="fixed h-[100vh] inset-0 flex justify-center items-center bg-black/50 bg-opacity-50 z-50"
+                    className="fixed h-[100vh] inset-0 flex justify-center items-center bg-black/50 bg-opacity-50 z-50  backdrop-blur-xs"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.1 }}
                 >
                     <motion.div
-                        className="bg-white rounded-md min-w-lg p-4"
+                        className="bg-white rounded-sm min-w-lg p-4"
                         initial={{ scale: 0.8 }}
                         animate={{ scale: 1 }}
                         exit={{ scale: 0.8 }}
                         transition={{ duration: 0.1 }}
                     >
-                        <div className="bg-[#00a89dbc] rounded-xl h-52 flex gap-3 justify-center items-center flex-col mb-4">
+                        <div className="bg-[#de8c45] rounded-sm h-52 flex gap-3 justify-center items-center flex-col mb-4">
                             <Image src={selectedUser?.avatar} width={80} height={80} alt="avatar" className="rounded-full" />
                             <div className="flex flex-col justify-center items-center text-white">
                                 <h1 className="font-medium text-2xl">{selectedUser.name}</h1>
@@ -38,7 +38,7 @@ const PaymentModal = ({ isPaymentModal, selectedUser, handleReject, handleAccept
                                 </div>
                                 <div>
                                     <h3 className="text-md font-medium">Amount</h3>
-                                    <p className="text-xs">$200</p>
+                                    <p className="text-xs">{selectedUser.amount}</p>
                                 </div>
                             </div>
                         </div>
@@ -46,13 +46,13 @@ const PaymentModal = ({ isPaymentModal, selectedUser, handleReject, handleAccept
                         <div className="flex justify-between gap-8 px-6">
                             <button
                                 onClick={handleReject}
-                                className="border text-black py-2 w-full rounded-md cursor-pointer"
+                                className="border text-black py-[7px] w-full rounded-sm cursor-pointer"
                             >
                                 Decline
                             </button>
                             <button
                                 onClick={handleAccept}
-                                className="bg-teal-600 text-white py-2 w-full rounded-md cursor-pointer"
+                                className="bg-[#F27405] text-white py-2 w-full rounded-sm cursor-pointer"
                             >
                                 Accept
                             </button>

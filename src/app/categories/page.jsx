@@ -95,7 +95,7 @@ export default function CategoryManagement() {
                 {/* Cards + Pagination Section */}
                 <div className="flex flex-col justify-between h-[76vh]">
                     <motion.div
-                        className="overflow-auto p-1 scrl-hide grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+                        className="overflow-auto p-1 scrl-hide grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.2, duration: 0.5 }}
