@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const PaymentModal = ({ isPaymentModal, selectedUser, handleReject, handleAccept }) => {
     return (
-        <AnimatePresence>
+        <AnimatePresence> 
             {isPaymentModal && selectedUser && (
                 <motion.div
                     className="fixed h-[100vh] inset-0 flex justify-center items-center bg-black/50 bg-opacity-50 z-50  backdrop-blur-xs"

@@ -48,142 +48,142 @@ export const feedbackData = [
 ]
 
 export const orders = [
-    {
-      id: "#526525",
-      name: "Jenny Wilson",
-      avatar: "/images/avatar.png",
-      phone: "(+33)7005-55927",
-      productName: "Spark Plug",
-      amount: "$100",
-      blocked: false,
-    },
-    {
-      id: "#526526",
-      name: "John Doe",
-      avatar: "/images/avatar.png",
-      phone: "(+33)7005-55928",
-      productName: "Car Battery",
-      amount: "$150",
-      blocked: false,
-    },
-    {
-      id: "#526527",
-      name: "Sarah Lee",
-      avatar: "/images/avatar.png",
-      phone: "(+33)7005-55929",
-      productName: "Alternator",
-      amount: "$120",
-      blocked: true,
-    },
-    {
-      id: "#526528",
-      name: "David Clark",
-      avatar: "/images/avatar.png",
-      phone: "(+33)7005-55930",
-      productName: "Brake Pads",
-      amount: "$80",
-      blocked: false,
-    },
-    {
-      id: "#526529",
-      name: "Emily Moore",
-      avatar: "/images/avatar.png",
-      phone: "(+33)7005-55931",
-      productName: "Suspension Kit",
-      amount: "$200",
-      blocked: false,
-    },
-    {
-      id: "#526530",
-      name: "Michael Smith",
-      avatar: "/images/avatar.png",
-      phone: "(+33)7005-55932",
-      productName: "Timing Belt",
-      amount: "$90",
-      blocked: true,
-    },
-    {
-      id: "#526531",
-      name: "Anna Brown",
-      avatar: "/images/avatar.png",
-      phone: "(+33)7005-55933",
-      productName: "Fuel Filter",
-      amount: "$40",
-      blocked: false,
-    },
-    {
-      id: "#526532",
-      name: "Chris Adams",
-      avatar: "/images/avatar.png",
-      phone: "(+33)7005-55934",
-      productName: "Oil Filter",
-      amount: "$30",
-      blocked: true,
-    },
-    {
-      id: "#526533",
-      name: "Karen Evans",
-      avatar: "/images/avatar.png",
-      phone: "(+33)7005-55935",
-      productName: "Air Filter",
-      amount: "$20",
-      blocked: false,
-    },
-    {
-      id: "#526534",
-      name: "Steven Harris",
-      avatar: "/images/avatar.png",
-      phone: "(+33)7005-55936",
-      productName: "Car Battery",
-      amount: "$170",
-      blocked: false,
-    },
-    {
-      id: "#526535",
-      name: "Olivia Jackson",
-      avatar: "/images/avatar.png",
-      phone: "(+33)7005-55937",
-      productName: "Brake Fluid",
-      amount: "$60",
-      blocked: true,
-    },
-    {
-      id: "#526536",
-      name: "Liam Walker",
-      avatar: "/images/avatar.png",
-      phone: "(+33)7005-55938",
-      productName: "Windshield Wipers",
-      amount: "$25",
-      blocked: false,
-    },
-    {
-      id: "#526537",
-      name: "Sophia Young",
-      avatar: "/images/avatar.png",
-      phone: "(+33)7005-55939",
-      productName: "Spark Plug",
-      amount: "$105",
-      blocked: true,
-    },
-    {
-      id: "#526538",
-      name: "Mason King",
-      avatar: "/images/avatar.png",
-      phone: "(+33)7005-55940",
-      productName: "Timing Belt",
-      amount: "$90",
-      blocked: false,
-    },
-    {
-      id: "#526539",
-      name: "Charlotte Scott",
-      avatar: "/images/avatar.png",
-      phone: "(+33)7005-55941",
-      productName: "Air Filter",
-      amount: "$30",
-      blocked: false,
-    }
-  ];
+  {
+    id: "#526525",
+    name: "Jenny Wilson",
+    avatar: "/images/avatar.png",
+    phone: "(+33)7005-55927",
+    productName: "Spark Plug",
+    amount: "$100",
+    blocked: false,
+  },
+  {
+    id: "#526526",
+    name: "John Doe",
+    avatar: "/images/avatar.png",
+    phone: "(+33)7005-55928",
+    productName: "Car Battery",
+    amount: "$150",
+    blocked: false,
+  },
+  {
+    id: "#526527",
+    name: "Sarah Lee",
+    avatar: "/images/avatar.png",
+    phone: "(+33)7005-55929",
+    productName: "Alternator",
+    amount: "$120",
+    blocked: true,
+  },
+  {
+    id: "#526528",
+    name: "David Clark",
+    avatar: "/images/avatar.png",
+    phone: "(+33)7005-55930",
+    productName: "Brake Pads",
+    amount: "$80",
+    blocked: false,
+  },
+  {
+    id: "#526529",
+    name: "Emily Moore",
+    avatar: "/images/avatar.png",
+    phone: "(+33)7005-55931",
+    productName: "Suspension Kit",
+    amount: "$200",
+    blocked: false,
+  },
+  {
+    id: "#526530",
+    name: "Michael Smith",
+    avatar: "/images/avatar.png",
+    phone: "(+33)7005-55932",
+    productName: "Timing Belt",
+    amount: "$90",
+    blocked: true,
+  },
+  {
+    id: "#526531",
+    name: "Anna Brown",
+    avatar: "/images/avatar.png",
+    phone: "(+33)7005-55933",
+    productName: "Fuel Filter",
+    amount: "$40",
+    blocked: false,
+  },
+  {
+    id: "#526532",
+    name: "Chris Adams",
+    avatar: "/images/avatar.png",
+    phone: "(+33)7005-55934",
+    productName: "Oil Filter",
+    amount: "$30",
+    blocked: true,
+  },
+  {
+    id: "#526533",
+    name: "Karen Evans",
+    avatar: "/images/avatar.png",
+    phone: "(+33)7005-55935",
+    productName: "Air Filter",
+    amount: "$20",
+    blocked: false,
+  },
+  {
+    id: "#526534",
+    name: "Steven Harris",
+    avatar: "/images/avatar.png",
+    phone: "(+33)7005-55936",
+    productName: "Car Battery",
+    amount: "$170",
+    blocked: false,
+  },
+  {
+    id: "#526535",
+    name: "Olivia Jackson",
+    avatar: "/images/avatar.png",
+    phone: "(+33)7005-55937",
+    productName: "Brake Fluid",
+    amount: "$60",
+    blocked: true,
+  },
+  {
+    id: "#526536",
+    name: "Liam Walker",
+    avatar: "/images/avatar.png",
+    phone: "(+33)7005-55938",
+    productName: "Windshield Wipers",
+    amount: "$25",
+    blocked: false,
+  },
+  {
+    id: "#526537",
+    name: "Sophia Young",
+    avatar: "/images/avatar.png",
+    phone: "(+33)7005-55939",
+    productName: "Spark Plug",
+    amount: "$105",
+    blocked: true,
+  },
+  {
+    id: "#526538",
+    name: "Mason King",
+    avatar: "/images/avatar.png",
+    phone: "(+33)7005-55940",
+    productName: "Timing Belt",
+    amount: "$90",
+    blocked: false,
+  },
+  {
+    id: "#526539",
+    name: "Charlotte Scott",
+    avatar: "/images/avatar.png",
+    phone: "(+33)7005-55941",
+    productName: "Air Filter",
+    amount: "$30",
+    blocked: false,
+  }
+];
 
 export const users = [
   {
@@ -332,7 +332,7 @@ export const sellersDetails = [
     phone: "(671) 555‑0110",
     location: "Beijing, China",
     "blocked": false,
-    "accepted" : false,
+    "accepted": false,
   },
   {
     id: "#696589",
@@ -342,7 +342,7 @@ export const sellersDetails = [
     phone: "(205) 555‑0100",
     location: "Barisal, Bangladesh",
     "blocked": false,
-    "accepted" : false,
+    "accepted": false,
   },
   {
     id: "#526587",
@@ -352,7 +352,7 @@ export const sellersDetails = [
     phone: "(907) 555‑0101",
     location: "Yangon, Myanmar",
     "blocked": false,
-    "accepted" : false,
+    "accepted": false,
   },
   {
     id: "#526521",
@@ -362,7 +362,7 @@ export const sellersDetails = [
     phone: "(239) 555‑0108",
     location: "Phnom Penh",
     "blocked": false,
-    "accepted" : false,
+    "accepted": false,
   },
   {
     id: "#256584",
@@ -372,7 +372,7 @@ export const sellersDetails = [
     phone: "(209) 555‑0104",
     location: "Tokyo, Japan",
     "blocked": false,
-    "accepted" : false,
+    "accepted": false,
   },
   {
     id: "#526522",
@@ -382,7 +382,7 @@ export const sellersDetails = [
     phone: "(316) 555‑0116",
     location: "Dhaka, Bangladesh",
     "blocked": false,
-    "accepted" : false,
+    "accepted": false,
   },
   {
     id: "#526589",
@@ -392,7 +392,7 @@ export const sellersDetails = [
     phone: "(406) 555‑0120",
     location: "Colombo, Sri Lanka",
     "blocked": false,
-    "accepted" : false,
+    "accepted": false,
   },
   {
     id: "#526523",
@@ -402,7 +402,7 @@ export const sellersDetails = [
     phone: "(505) 555‑0125",
     location: "Sylhet, Bangladesh",
     "blocked": false,
-    "accepted" : false,
+    "accepted": false,
   },
   {
     id: "#200257",
@@ -412,7 +412,7 @@ export const sellersDetails = [
     phone: "(225) 555‑0118",
     location: "Karachi, Pakistan",
     "blocked": false,
-    "accepted" : false,
+    "accepted": false,
   },
   {
     id: "#526534",
@@ -422,7 +422,7 @@ export const sellersDetails = [
     phone: "(702) 555‑0122",
     location: "Mumbai, India",
     "blocked": false,
-    "accepted" : false,
+    "accepted": false,
   },
   {
     id: "#105986",
@@ -432,7 +432,7 @@ export const sellersDetails = [
     phone: "(302) 555‑0107",
     location: "Kathmandu, Nepal",
     "blocked": false,
-    "accepted" : false,
+    "accepted": false,
   },
   {
     id: "#845911",
@@ -442,7 +442,7 @@ export const sellersDetails = [
     phone: "(312) 555‑0195",
     location: "Chittagong, Bangladesh",
     "blocked": false,
-    "accepted" : false,
+    "accepted": false,
   },
   {
     id: "#258744",
@@ -452,7 +452,7 @@ export const sellersDetails = [
     phone: "(415) 555‑0133",
     location: "Lahore, Pakistan",
     "blocked": false,
-    "accepted" : false,
+    "accepted": false,
   },
   {
     id: "#785214",
@@ -462,7 +462,7 @@ export const sellersDetails = [
     phone: "(504) 555‑0154",
     location: "Male, Maldives",
     "blocked": false,
-    "accepted" : false,
+    "accepted": false,
   },
   {
     id: "#369852",
@@ -472,7 +472,7 @@ export const sellersDetails = [
     phone: "(808) 555‑0183",
     location: "Jakarta, Indonesia",
     "blocked": false,
-    "accepted" : false,
+    "accepted": false,
   },
 ];
 
@@ -600,9 +600,6 @@ export const paymentDetails = [
   },
 ];
 
-
-
-
 export const dummyCategories = [
   { name: "Legal", icon: "/images/legal.png" },
   { name: "Business", icon: "/images/business.png" },
@@ -636,6 +633,21 @@ export const notifications = [
   { message: "Reminder: Prepare questions for the primary user in the next podcast episode.", time: "8 hours ago" },
 ];
 
+
+export const heroData = [
+  {
+    id: "1",
+    title: "Home Page Hero",
+    voucher: "Up to 10% off Voucher",
+    image: "/images/hero.png",
+  },
+  {
+    id: "2",
+    title: "My Account Hero",
+    voucher: "Up to 10% off Voucher",
+    image: "/images/hero.png",
+  }
+];
 
 
 export const user = {

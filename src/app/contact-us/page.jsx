@@ -1,99 +1,78 @@
 "use client";
-import { LexicalComposer } from "@lexical/react/LexicalComposer";
-import { RichTextPlugin } from "@lexical/react/LexicalRichTextPlugin";
-import { ContentEditable } from "@lexical/react/LexicalContentEditable";
-import { HistoryPlugin } from "@lexical/react/LexicalHistoryPlugin";
-import { ListPlugin } from "@lexical/react/LexicalListPlugin";
-import { AutoFocusPlugin } from "@lexical/react/LexicalAutoFocusPlugin";
-import { LexicalErrorBoundary } from "@lexical/react/LexicalErrorBoundary";
-import ToolbarPlugin from "@/components/editor/ToolbarPlugin";
+
 import { useState } from "react";
-import { $getRoot, $createParagraphNode, $createTextNode } from "lexical";
-import { OnChangePlugin } from "@lexical/react/LexicalOnChangePlugin";
-import { ListNode, ListItemNode } from "@lexical/list";
-import { HeadingNode, QuoteNode } from "@lexical/rich-text";
-
-const initialText = `Welcome to Consult Me. By using the App, you agree to comply with these Terms and Conditions. If you do not agree, do not use the App.
-
-1. Acceptance of Terms
-By using the App, you agree to these Terms and any updates that may occur. Please review them regularly.
-
-2. User Registration
-You must register an account to use certain features. You are responsible for maintaining the security of your login credentials and all activities under your account.
-
-3. Consulting Services
-The App connects clients with independent consultants. The App does not offer consulting services directly; the terms, fees, and schedules for consultations are between the client and consultant.
-
-4. Fees and Payments
-Clients will pay consultants according to their set rates. Payments are processed through the App’s payment system. Refunds and cancellations are subject to the consultant’s policy.
-
-5. User Conduct
-You agree not to:
-• Violate laws or third-party rights.
-• Impersonate others.
-• Distribute harmful or offensive content.
-
-6. Intellectual Property
-Content in the App, including logos and software, is owned by [App Name] and cannot be used without permission.
-`;
-
-const editorConfig = {
-  theme: {
-    paragraph: "editor-paragraph",
-  },
-  onError(error) {
-    throw error;
-  },
-  nodes: [
-    ListNode,
-    ListItemNode,
-    HeadingNode,
-    QuoteNode,
-  ],
-  editorState: () => {
-    const root = $getRoot();
-    const paragraph = $createParagraphNode();
-    paragraph.append($createTextNode(initialText));
-    root.append(paragraph);
-  },
-};
+import toast from "react-hot-toast";
+import { AiOutlineMail } from "react-icons/ai";
+import { FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { FiLinkedin } from "react-icons/fi";
+import { LiaPhoneSolid } from "react-icons/lia";
+import { LuFacebook } from "react-icons/lu";
+import { PiTiktokLogoLight } from "react-icons/pi";
+import { TfiTwitter } from "react-icons/tfi";
 
 const Terms = () => {
-  const [content, setContent] = useState(initialText);
+  const [contactInfo, setContactInfo] = useState({
+    phone: "+0123456789",
+    email: "hatem@gmail.com",
+    facebook: "www.facebook.com/hatem040",
+    twitter: "www.twitter.com/hatem040",
+    instagram: "www.instagram.com/hatem040",
+    linkedin: "www.linkedin.com/in/hatem040",
+    tiktok: "www.tiktok.com/in/hatem040",
+  });
 
-  const handleChange = (editorState) => {
-    editorState.read(() => {
-      const root = $getRoot();
-      setContent(root.getTextContent());
-    });
+  const contactFields = [
+    { name: "phone", icon: <LiaPhoneSolid size={25} /> },
+    { name: "email", icon: <AiOutlineMail size={25} /> },
+    { name: "facebook", icon: <LuFacebook size={25} /> },
+    { name: "twitter", icon: <TfiTwitter size={25} /> },
+    { name: "instagram", icon: <FaInstagram size={25} /> },
+    { name: "linkedin", icon: <FiLinkedin size={25} /> },
+    { name: "tiktok", icon: <PiTiktokLogoLight size={25} /> },
+  ];
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setContactInfo((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSave = () => {
-    console.log("Saved content:", content);
+    console.log("Saved Contact Info:", contactInfo);
+    toast.success('Contacts save successfully');
   };
 
   return (
-    <div className="space-y-4 text-[#333333] m-5 overflow-auto scrl-hide">
+    <div className="space-y-4 text-[#333333] m-5">
       <div className="flex flex-col justify-between gap-6 h-[85vh]">
         <div>
-          <h2 className="text-xl font-medium text-gray-800">Terms and Conditions</h2>
-          <LexicalComposer initialConfig={editorConfig}>
-            <ToolbarPlugin />
-            <RichTextPlugin
-              contentEditable={<ContentEditable className="min-h-[300px] rounded-md outline-none" />}
-              placeholder=""
-              ErrorBoundary={LexicalErrorBoundary}
-            />
-            <HistoryPlugin />
-            <ListPlugin />
-            <AutoFocusPlugin />
-            <OnChangePlugin onChange={handleChange} />
-          </LexicalComposer>
+          <h2 className="text-xl font-medium text-gray-800 mb-6">Contact US</h2>
+
+          <div className="space-y-4">
+            {contactFields.map(({ name, icon }) => (
+              <div key={name} className="flex items-center border border-[#FCCEB0] rounded-xl overflow-hidden w-2/8">
+                <div className="bg-[#FCCEB0] p-2 text-white">
+                  <div className="bg-[#DF5800] rounded-full p-2">
+                    {icon}
+                  </div>
+                </div>
+                <input
+                  type="text"
+                  name={name}
+                  value={contactInfo[name]}
+                  onChange={handleChange}
+                  className="w-full p-3 outline-none"
+                /> 
+              </div>
+            ))}
+          </div>
         </div>
 
-        <div className="flex justify-center sticky bottom-0 bg-[#f8f8f8]">
-          <button onClick={handleSave} className="px-6 py-2 bg-[#0ABAB5] text-white rounded-md hover:bg-[#099c99] transition cursor-pointer">
-            Save Changes
+        <div className="flex justify-center sticky bottom-0 bg-[#f8f8f8] py-2">
+          <button
+            onClick={handleSave}
+            className="px-6 py-2 bg-[#DF5800] text-white rounded-md hover:bg-[#b84900] transition cursor-pointer"
+          >
+            Save & Change
           </button>
         </div>
       </div>
