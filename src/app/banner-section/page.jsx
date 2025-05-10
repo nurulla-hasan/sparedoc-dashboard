@@ -78,7 +78,7 @@ const BannerPage = () => {
 
                                         <p className='text-lg font-medium text-center'>Spare Parts</p>
                                         <button
-                                            className='bg-[#DF5800] py-2 w-52 text-white rounded cursor-pointer'
+                                            className='bg-button py-2 w-52 text-white rounded cursor-pointer'
                                             onClick={() => handleEdit(idx)}
                                         >
                                             Edit

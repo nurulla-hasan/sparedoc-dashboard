@@ -14,13 +14,13 @@ const Card = ({ handleDelete, handleEdit, cat, idx }) => {
                             className="w-16 h-16 mx-auto mb-2 grayscale"
                         />
                     </div> */}
-                    <div className="bg-white px-8 py-4 pb-1 rounded-md">
+                    <div className="bg-white rounded-md">
                         <Image
                             src={cat?.icon}
                             alt={cat.name}
                             width={200}
-                            height={200}
-                            className="w-16 h-16 mx-auto mb-2"
+                            height={100}
+                            className=" mx-auto mb-2"
                         />
                     </div>
                 </div>
@@ -28,13 +28,13 @@ const Card = ({ handleDelete, handleEdit, cat, idx }) => {
                 <div className="flex justify-center gap-2 mt-2 w-full">
                     <button
                         onClick={() => handleDelete(idx)}
-                        className="border border-[#DF5800] bg-[#FEEFE6] w-full text-sm px-3 py-[3px] rounded text-[#DF5800] cursor-pointer"
+                        className="border border-button bg-[#FEEFE6] w-full text-sm px-3 py-[3px] rounded text-button cursor-pointer"
                     >
                         Delete
                     </button>
                     <button
                         onClick={() => handleEdit(idx)}
-                        className="bg-[#DF5800] text-white w-full text-sm px-5 py-1 rounded cursor-pointer"
+                        className="bg-button text-white w-full text-sm px-5 py-1 rounded cursor-pointer"
                     >
                         Edit
                     </button>

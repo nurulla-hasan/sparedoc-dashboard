@@ -42,35 +42,35 @@ const Terms = () => {
   };
 
   return (
-    <div className="space-y-4 text-[#333333] m-5">
-      <div className="flex flex-col justify-between gap-6 h-[85vh]">
-        <div>
-          <h2 className="text-xl font-medium text-gray-800 mb-6">Contact US</h2>
-
-          <div className="space-y-4">
-            {contactFields.map(({ name, icon }) => (
-              <div key={name} className="flex items-center border border-[#FCCEB0] rounded-xl overflow-hidden w-2/8">
-                <div className="bg-[#FCCEB0] p-2 text-white">
-                  <div className="bg-[#DF5800] rounded-full p-2">
-                    {icon}
+    <div className="text-[#333333] p-5">
+      <div className="bg-white p-5 h-[85vh] flex flex-col justify-between">
+        <div className="flex flex-col justify-between gap-6">
+          <div>
+            <h2 className="text-xl font-medium text-gray-800 mb-6">Contact US</h2>
+            <div className="space-y-4">
+              {contactFields.map(({ name, icon }) => (
+                <div key={name} className="flex items-center border border-[#FCCEB0] rounded-xl overflow-hidden w-2/8">
+                  <div className="bg-[#FCCEB0] p-2 text-white">
+                    <div className="bg-button rounded-full p-2">
+                      {icon}
+                    </div>
                   </div>
+                  <input
+                    type="text"
+                    name={name}
+                    value={contactInfo[name]}
+                    onChange={handleChange}
+                    className="w-full p-3 outline-none"
+                  />
                 </div>
-                <input
-                  type="text"
-                  name={name}
-                  value={contactInfo[name]}
-                  onChange={handleChange}
-                  className="w-full p-3 outline-none"
-                /> 
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
-
-        <div className="flex justify-center sticky bottom-0 bg-[#f8f8f8] py-2">
+        <div className="flex justify-center">
           <button
             onClick={handleSave}
-            className="px-6 py-2 bg-[#DF5800] text-white rounded-md hover:bg-[#b84900] transition cursor-pointer"
+            className="px-6 py-2 bg-button text-white rounded-xs hover:bg-button-hover transition cursor-pointer"
           >
             Save & Change
           </button>

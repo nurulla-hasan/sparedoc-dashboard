@@ -13,27 +13,9 @@ import { OnChangePlugin } from "@lexical/react/LexicalOnChangePlugin";
 import { ListNode, ListItemNode } from "@lexical/list";
 import { HeadingNode, QuoteNode } from "@lexical/rich-text";
 
-const initialText = `Welcome to Consult Me, your mobile platform for consulting. We connect businesses of all sizes with experienced consultants for affordable, tailored advice-without the overhead of traditional services.
+const initialText = `Our Story
 
-Who We Are:
-Our team of professionals offers expertise across business strategy, marketing, finance, technology, and more. Our mission is to provide accessible consulting to help your business grow and succeed. 
-
-How It Works:
-Download: Available on iOS and Android
-Select: Browse consultants based on expertise
-Book: Schedule your session
-Get Results: Receive actionable advice and solutions
-
-Why Choose Us?
-Expert Consultants
-Flexible and Accessible
-Affordable Services
-Confidential and Secure
-Customer-Focused
-
-Our Vision:
-We aim to make expert consulting accessible, affordable, and efficient to empower businesses to thrive.
-Contact us at [contact@consultme.com] or visit www.appname.com.
+At Sparedoc, we're transforming the way you shop for car parts. As a trusted e-commerce platform, we offer a wide selection of genuine and aftermarket auto components, accessories, and tools. Whether you're a car owner, garage professional, or enthusiast, we make it easy to find everything your vehicle needs — quickly, reliably, and all in one place.
 `;
 
 const editorConfig = {
@@ -73,25 +55,28 @@ const About = () => {
 
     return (
         <div className="space-y-4 text-[#333333] m-5 overflow-auto scrl-hide">
-            <div className="flex flex-col justify-between gap-6 h-[85vh]">
-                <div>
-                    <h2 className="text-xl font-medium text-gray-800">About Us</h2>
-                    <LexicalComposer initialConfig={editorConfig}>
-                        <ToolbarPlugin />
-                        <RichTextPlugin
-                            contentEditable={<ContentEditable className="min-h-[300px] rounded-md outline-none" />}
-                            placeholder=""
-                            ErrorBoundary={LexicalErrorBoundary}
-                        />
-                        <HistoryPlugin />
-                        <ListPlugin />
-                        <AutoFocusPlugin />
-                        <OnChangePlugin onChange={handleChange} />
-                    </LexicalComposer>
-                </div>
+            <div className="bg-white p-5 h-[85vh] flex flex-col justify-between">
+                <div className="flex flex-col justify-between gap-6 ">
+                    <div>
+                        <h2 className="text-xl font-medium text-gray-800">About Us</h2>
+                        <LexicalComposer initialConfig={editorConfig}>
+                            <ToolbarPlugin />
+                            <RichTextPlugin
+                                contentEditable={<ContentEditable className="min-h-[300px] rounded-md outline-none" />}
+                                placeholder=""
+                                ErrorBoundary={LexicalErrorBoundary}
+                            />
+                            <HistoryPlugin />
+                            <ListPlugin />
+                            <AutoFocusPlugin />
+                            <OnChangePlugin onChange={handleChange} />
+                        </LexicalComposer>
+                    </div>
 
-                <div className="flex justify-center  bg-[#f8f8f8]">
-                    <button onClick={handleSave} className="px-6 py-2 bg-[#0ABAB5] text-white rounded-md hover:bg-[#099c99] transition cursor-pointer">
+
+                </div>
+                <div className="flex justify-center">
+                    <button onClick={handleSave} className="px-6 py-2 bg-button text-white rounded-xs hover:bg-button-hover transition cursor-pointer">
                         Save Changes
                     </button>
                 </div>

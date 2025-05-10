@@ -28,6 +28,7 @@ const settingMenu = [
   { label: "Profile", href: "/profile" },
   { label: "Contact-US", href: "/contact-us" },
   { label: "About Us", href: "/about" },
+  { label: "Our Team", href: "/our-team" },
 ];
 
 export default function RootLayout({ children }) {

@@ -60,7 +60,7 @@ const ForgotPasswordForm = () => {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full bg-[#DF5800] hover:bg-[#bf4a00] rounded-sm border-gray-400 text-white py-2 text-xs px-4 transition duration-200 cursor-pointer disabled:opacity-70"
+            className="w-full bg-button hover:bg-button-hover rounded-sm border-gray-400 text-white py-2 text-xs px-4 transition duration-200 cursor-pointer disabled:opacity-70"
           >
             {isSubmitting ? "Sending..." : "Continue"}
           </button>

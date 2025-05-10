@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { motion, AnimatePresence } from "framer-motion";
 import { RxCross2 } from 'react-icons/rx';
 
-const EditBannerModal = ({ isEditing, setIsEditing, editIndex, handleChange, setFormData, handleSave, formData }) => {
+const EditBannerModal = ({ isEditing, setIsEditing, handleChange, setFormData, handleSave, formData }) => {
     return (
         <>
             <AnimatePresence>
@@ -25,7 +25,7 @@ const EditBannerModal = ({ isEditing, setIsEditing, editIndex, handleChange, set
                                 color="#aeaeae"
                                 size={22}
                             />
-                            <h2 className='text-lg font-medium flex items-center justify-center gap-2 mb-6'>Edit Banner</h2>
+                            <h2 className='text-xl font-medium flex items-center justify-center gap-2 mb-6'>Edit Banner</h2>
                             <input
                                 type='text'
                                 name='title'

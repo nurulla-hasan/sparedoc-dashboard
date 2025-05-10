@@ -601,28 +601,17 @@ export const paymentDetails = [
 ];
 
 export const dummyCategories = [
-  { name: "Legal", icon: "/images/legal.png" },
-  { name: "Business", icon: "/images/business.png" },
-  { name: "IT Consult", icon: "/images/it-consult.png" },
-  { name: "Farming", icon: "/images/farming.png" },
-  { name: "Tech Consult", icon: "/images/tech-consult.png" },
-  { name: "Education", icon: "/images/education.png" },
-  { name: "Career Consult", icon: "/images/career-consult.png" },
-  { name: "Real State", icon: "/images/real-state.png" },
-  { name: "Life Style", icon: "/images/life-style.png" },
-  { name: "Financial", icon: "/images/financial.png" },
-  { name: "HR Consult", icon: "/images/hr-consult.png" },
-  { name: "Legal", icon: "/images/legal.png" },
-  { name: "Business", icon: "/images/business.png" },
-  { name: "IT Consult", icon: "/images/it-consult.png" },
-  { name: "Farming", icon: "/images/farming.png" },
-  { name: "Tech Consult", icon: "/images/tech-consult.png" },
-  { name: "Education", icon: "/images/education.png" },
-  { name: "Career Consult", icon: "/images/career-consult.png" },
-  { name: "Real State", icon: "/images/real-state.png" },
-  { name: "Life Style", icon: "/images/life-style.png" },
-  { name: "Financial", icon: "/images/financial.png" },
-  { name: "HR Consult", icon: "/images/hr-consult.png" },
+  { name: "Legal", icon: "/images/category.svg" },
+  { name: "Business", icon: "/images/category.svg" },
+  { name: "IT Consult", icon: "/images/category.svg" },
+  { name: "Farming", icon: "/images/category.svg" },
+  { name: "Tech Consult", icon: "/images/category.svg" },
+  { name: "Education", icon: "/images/category.svg" },
+  { name: "Career Consult", icon: "/images/category.svg" },
+  { name: "Real State", icon: "/images/category.svg" },
+  { name: "Life Style", icon: "/images/category.svg" },
+  { name: "Financial", icon: "/images/category.svg" },
+  { name: "HR Consult", icon: "/images/category.svg" },
 ];
 
 export const notifications = [
@@ -647,6 +636,36 @@ export const heroData = [
     voucher: "Up to 10% off Voucher",
     image: "/images/hero.png",
   }
+];
+
+export const teamMembers = [
+  {
+    id: 1,
+    name: "Tom Cruise",
+    position: "Founder & Chairman",
+    image: "/images/member-1.png",
+    twitter: "https://twitter.com",
+    instagram: "https://instagram.com",
+    linkedin: "https://linkedin.com",
+  },
+  {
+    id: 2,
+    name: "Emma Watson",
+    position: "Manager",
+    image: "/images/member-2.png",
+    twitter: "https://twitter.com",
+    instagram: "https://instagram.com",
+    linkedin: "https://linkedin.com",
+  },
+  {
+    id: 3,
+    name: "Will Smith",
+    position: "Sales Man",
+    image: "/images/member-3.png",
+    twitter: "https://twitter.com",
+    instagram: "https://instagram.com",
+    linkedin: "https://linkedin.com",
+  },
 ];
 
 

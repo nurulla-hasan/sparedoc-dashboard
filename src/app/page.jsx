@@ -21,7 +21,7 @@ export default function Home() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.4, delay: idx * 0.1 }}
-                className="flex flex-col justify-between items-center bg-[#FDFDFD] rounded-lg  w-full border border-[#DF5800]"
+                className="flex flex-col justify-between items-center bg-[#FDFDFD] rounded-lg  w-full border border-button"
               >
                 <div className="flex justify-between items-center py-8 w-[360px]">
 
@@ -62,13 +62,13 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
         >
-          <div className="rounded-md overflow-auto bg-white text-[#333333] space-y-2 border border-[#DF5800]">
+          <div className="rounded-md overflow-auto bg-white text-[#333333] space-y-2 border border-button">
             <div className="p-2 px-4 pb-0">
               <h2 className="text-lg font-medium">Recent Users Feedback</h2>
             </div>
             <div className="overflow-scroll h-[31vh] scrl-hide">
               <table className="w-full text-sm text-left">
-                <thead className="text-[#DF5800] bg-[#FEF1E6] text-[16px] sticky top-0">
+                <thead className="text-button bg-[#FEF1E6] text-[16px] sticky top-0">
                   <tr>
                     <th className="px-2 py-3 font-normal text-center">S.ID</th>
                     <th className="py-3 font-normal text-center">Sellers</th>

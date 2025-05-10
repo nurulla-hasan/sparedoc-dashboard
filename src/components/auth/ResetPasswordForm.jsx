@@ -112,7 +112,7 @@ const ResetPasswordForm = () => {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full bg-[#DF5800] disabled:cursor-not-allowed text-white py-2 text-xs px-4 hover:bg-[#bf4a00] transition duration-200 cursor-pointer disabled:opacity-70 rounded-sm"
+            className="w-full bg-button disabled:cursor-not-allowed text-white py-2 text-xs px-4 hover:bg-button-hover transition duration-200 cursor-pointer disabled:opacity-70 rounded-sm"
           >
             {isSubmitting ? "Processing..." : "Reset Password"}
           </button>

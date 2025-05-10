@@ -47,7 +47,7 @@ const EditProfiletab = ({activeTab, handleSubmit, onSubmitProfile, register}) =>
                     </div>
 
                     <div className='w-full text-center'>
-                        <button type="submit" className="mt-4 px-8 bg-[#DF5800] hover:bg-[#bf4a00] text-white py-2 rounded-md cursor-pointer">
+                        <button type="submit" className="mt-4 px-8 bg-button hover:bg-button-hover text-white py-2 rounded-xs cursor-pointer">
                             Save Changes
                         </button>
                     </div>

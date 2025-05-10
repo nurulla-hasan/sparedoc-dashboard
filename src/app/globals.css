@@ -14,6 +14,12 @@
   }
 }
 
+
+@theme {
+  --color-button: #DF5800;
+  --color-button-hover: #bf4a00;
+}
+
 @layer base {
   html {
     font-family: var(--font-poppins);

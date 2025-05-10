@@ -103,7 +103,7 @@ const LoginFormContent = () => {
                 id="remember"
                 checked={rememberPassword}
                 onChange={() => setRememberPassword(!rememberPassword)}
-                className="h-3 w-3 accent-[#DF5800] cursor-pointer"
+                className="h-3 w-3 accent-button cursor-pointer"
               />
               <label htmlFor="remember" className="ml-2 text-xs text-[#333333]">
                 Remember Password
@@ -116,7 +116,7 @@ const LoginFormContent = () => {
 
           <button
             type="submit"
-            className="w-full bg-[#DF5800] text-white py-2 text-xs px-4 hover:bg-[#bf4a00] transition duration-200 cursor-pointer rounded-sm"
+            className="w-full bg-button text-white py-2 text-xs px-4 hover:bg-button-hover transition duration-200 cursor-pointer rounded-sm"
           >
             Sign in
           </button>

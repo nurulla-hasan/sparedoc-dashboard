@@ -73,7 +73,7 @@ const Page = () => {
 
                             <div
                                 onClick={() => fileInputRef.current?.click()}
-                                className='absolute flex justify-center items-center p-1.5 w-8 h-8 border-2 border-white bg-[#DF5800] rounded-full top-16 -right-2 cursor-pointer'
+                                className='absolute flex justify-center items-center p-1.5 w-8 h-8 border-2 border-white bg-button rounded-full top-16 -right-2 cursor-pointer'
                             >
                                 <FiCamera size={22} color='#fff' />
                             </div>
@@ -93,7 +93,7 @@ const Page = () => {
                         <button
                             onClick={() => setActiveTab('profile')}
                             className={`pb-1 border-b-2 cursor-pointer ${activeTab === 'profile'
-                                ? 'border-[#DF5800] text-[#DF5800] font-semibold'
+                                ? 'border-button text-button font-semibold'
                                 : 'border-transparent text-gray-600'
                                 }`}
                         >
@@ -102,7 +102,7 @@ const Page = () => {
                         <button
                             onClick={() => setActiveTab('password')}
                             className={`pb-1 border-b-2 cursor-pointer ${activeTab === 'password'
-                                ? 'border-[#DF5800] text-[#DF5800] font-semibold'
+                                ? 'border-button text-button font-semibold'
                                 : 'border-transparent text-gray-600'
                                 }`}
                         >

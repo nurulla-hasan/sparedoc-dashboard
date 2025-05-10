@@ -64,7 +64,7 @@ export default function ToolbarPlugin() {
   };
 
   return (
-    <div className="flex flex-wrap items-center justify-end gap-2 p-2 rounded-md mb-4 sticky top-0 bg-[#f8f8f8]">
+    <div className="flex flex-wrap items-center justify-end gap-2 p-2 rounded-md mb-4 sticky top-0">
       {/* Font Size Selector */}
       <div className="border-2 border-gray-300 bg-white p-1 rounded text-sm font-semibold">
         <select
