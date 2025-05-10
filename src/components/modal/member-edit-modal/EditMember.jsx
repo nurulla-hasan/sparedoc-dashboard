@@ -27,32 +27,37 @@ const EditMember = ({ editingMember, setForm, setEditingMember, handleSave, form
                             />
                             <h2 className="text-xl text-center font-semibold mb-8">Edit Member</h2>
                             <div className="flex flex-col gap-3">
+                                <label className="text-sm -mb-2 font-medium text-gray-600">Name</label>
                                 <input
-                                    className="border p-2 rounded outline-none border-button/20 text-sm text-gray-600"
+                                    className="border p-2 rounded outline-none border-button/20 text-sm text-gray-600 mb-1"
                                     placeholder="Name"
                                     value={form.name}
                                     onChange={(e) => setForm({ ...form, name: e.target.value })}
                                 />
+                                <label className="text-sm -mb-2 font-medium text-gray-600">Position</label>
                                 <input
-                                    className="border p-2 rounded outline-none border-button/20 text-sm text-gray-600"
+                                    className="border p-2 rounded outline-none border-button/20 text-sm text-gray-600 mb-1"
                                     placeholder="Position"
                                     value={form.position}
                                     onChange={(e) => setForm({ ...form, position: e.target.value })}
                                 />
+                                <label className="text-sm -mb-2 font-medium text-gray-600">Twitter</label>
                                 <input
-                                    className="border p-2 rounded outline-none border-button/20 text-sm text-gray-600"
+                                    className="border p-2 rounded outline-none border-button/20 text-sm text-gray-600 mb-1"
                                     placeholder="Twitter URL"
                                     value={form.twitter}
                                     onChange={(e) => setForm({ ...form, twitter: e.target.value })}
                                 />
+                                <label className="text-sm -mb-2 font-medium text-gray-600">Instagram</label>
                                 <input
-                                    className="border p-2 rounded outline-none border-button/20 text-sm text-gray-600"
+                                    className="border p-2 rounded outline-none border-button/20 text-sm text-gray-600 mb-1"
                                     placeholder="Instagram URL"
                                     value={form.instagram}
                                     onChange={(e) => setForm({ ...form, instagram: e.target.value })}
                                 />
+                                <label className="text-sm -mb-2 font-medium text-gray-600">LinkedIn</label>
                                 <input
-                                    className="border p-2 rounded outline-none border-button/20 text-sm text-gray-600"
+                                    className="border p-2 rounded outline-none border-button/20 text-sm text-gray-600 mb-1"
                                     placeholder="LinkedIn URL"
                                     value={form.linkedin}
                                     onChange={(e) => setForm({ ...form, linkedin: e.target.value })}

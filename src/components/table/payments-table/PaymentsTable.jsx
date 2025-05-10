@@ -20,7 +20,7 @@ const PaymentTable = ({ paged, handleModal }) => {
                     {paged.map((user) => (
                         <tr
                             key={user.id}
-                            className={`odd:bg-white *:text-[15px] *:text-[#636363]`}>
+                            className={`hover:bg-[#FEF1E6] transition-all duration-200 *:text-[15px] *:text-[#636363]`}>
                             <td className="px-4 py-3">{user.id}</td>
                             <td className="px-4 py-3 flex items-center gap-2">
                                 <img src={user.avatar} alt="" className="w-9 h-9 rounded-full" />

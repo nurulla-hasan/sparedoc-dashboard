@@ -23,22 +23,21 @@ const PaymentModal = ({ isPaymentModal, selectedUser, handleReject, handleAccept
                             <Image src={selectedUser?.avatar} width={80} height={80} alt="avatar" className="rounded-full" />
                             <div className="flex flex-col justify-center items-center text-white">
                                 <h1 className="font-medium text-2xl">{selectedUser.name}</h1>
-                                <p>Consultant</p>
                             </div>
                         </div>
                         <div className="mb-10 px-6">
                             <div className="space-y-4 *:space-y-1">
                                 <div>
                                     <h3 className="text-md font-medium">Name On Card</h3>
-                                    <p className="text-xs">{selectedUser.name}</p>
+                                    <p className="text-sm">{selectedUser.name}</p>
                                 </div>
                                 <div>
                                     <h3 className="text-md font-medium">Email</h3>
-                                    <p className="text-xs">{selectedUser.email}</p>
+                                    <p className="text-sm">{selectedUser.email}</p>
                                 </div>
                                 <div>
                                     <h3 className="text-md font-medium">Amount</h3>
-                                    <p className="text-xs">{selectedUser.amount}</p>
+                                    <p className="text-sm">{selectedUser.amount}</p>
                                 </div>
                             </div>
                         </div>

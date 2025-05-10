@@ -4,9 +4,7 @@ import Pagination from "@/components/pagination/Pagination";
 import OrderTable from "@/components/table/orders-table/OrderTable";
 import { orders } from "@/data/data";
 import { useState } from "react";
-import { FiSearch } from "react-icons/fi";
 import { motion } from "framer-motion";
-import toast from "react-hot-toast";
 
 
 export default function Orders() {
