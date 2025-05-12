@@ -30,7 +30,16 @@ const OurTeam = () => {
             twitter: member.twitter,
             instagram: member.instagram,
             linkedin: member.linkedin,
+            image: member.image || '',
         });
+    };
+
+    const handleImageChange = (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            const imageUrl = URL.createObjectURL(file);
+            setForm({ ...form, image: imageUrl });
+        }
     };
 
     const handleSave = () => {
@@ -55,10 +64,10 @@ const OurTeam = () => {
                                 <div className="bg-[#fcceb023] rounded-sm h-fit w-fit flex justify-center px-10 pt-5">
                                     <Image
                                         src={member?.image || '/images/placeholder.png'}
-                                        width={200}
-                                        height={800}
+                                        width={500}
+                                        height={500}
                                         alt="Team Member"
-                                        className=""
+                                        className="w-[200px] h-[270px]"
                                     />
                                 </div>
                                 <div className="space-y-2">
@@ -83,7 +92,7 @@ const OurTeam = () => {
             </div>
 
             {/* Edit Modal */}
-            <EditMember {...{editingMember, setForm, setEditingMember, handleSave, form}}/>
+            <EditMember {...{ editingMember, setForm, setEditingMember, handleSave, form, handleImageChange }} />
         </div>
     );
 };
