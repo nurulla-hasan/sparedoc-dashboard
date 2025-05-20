@@ -23,7 +23,7 @@ export default function Home() {
                 transition={{ duration: 0.4, delay: idx * 0.1 }}
                 className="flex flex-col justify-between items-center bg-[#FDFDFD] rounded-lg  w-full border border-button"
               >
-                <div className="flex justify-between items-center py-8 w-[360px]">
+                <div className="flex justify-between items-center p-8 w-full">
 
                   <div className="flex items-center gap-2">
                     <div className="bg-[#EFEFEF] p-3 rounded-full">
