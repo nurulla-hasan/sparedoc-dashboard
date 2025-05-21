@@ -1,6 +1,8 @@
 import { SlEye } from "react-icons/sl";
 
 const OrderTable = ({ paged, handleClick }) => {
+
+    
     return (
         <>
             <table className="min-w-full text-sm ">
