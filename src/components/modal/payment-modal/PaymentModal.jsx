@@ -9,7 +9,7 @@ const PaymentModal = ({ isPaymentModal, selectedUser, handleReject, handleAccept
                     className="fixed h-[100vh] inset-0 flex justify-center items-center bg-black/50 bg-opacity-50 z-50  backdrop-blur-xs"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
+                    exit={{ opacity: 0 }} 
                     transition={{ duration: 0.1 }}
                 >
                     <motion.div

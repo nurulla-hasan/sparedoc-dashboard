@@ -110,16 +110,8 @@ export default function PaymentDetails() {
         </div>
       </motion.div>
 
-
-
-      {
-        isPaymentModal && (
-          <div>
-            <PaymentModal {...{ setIsPaymentModal, isPaymentModal, selectedUser, handleReject, handleAccept }} />
-          </div>
-        )
-      }
-
+      {/* Modal */}
+      <PaymentModal {...{ setIsPaymentModal, isPaymentModal, selectedUser, handleReject, handleAccept }} />
 
     </PageContainer>
   );

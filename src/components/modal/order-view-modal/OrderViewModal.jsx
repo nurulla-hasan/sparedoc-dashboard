@@ -1,46 +1,80 @@
+"use client";
 import { motion } from "framer-motion";
+import { FiX } from "react-icons/fi";
 
-const OrderViewModal = ({viewModal, setViewModal, orderdata}) => {
-    return (
-        <>
-            {
-                viewModal && (
-                    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 bg-opacity-40">
-                        <motion.div
-                            className="bg-white rounded-xl p-6 w-full max-w-md shadow-xl relative"
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            transition={{ duration: 0.3 }}
-                        >
-                            {/* Close Button */}
-                            <button
-                                className="absolute top-2 right-2 text-gray-500 hover:text-red-500"
-                                onClick={() => setViewModal(false)}
+const OrderViewModal = ({ viewModal, setViewModal, orderdata }) => {
+  return (
+    <>
+      {viewModal && (
+        <div className="fixed h-[100vh] inset-0 flex justify-center items-center bg-black/50 bg-opacity-50 z-50  backdrop-blur-xs">
+          <motion.div
+            className="bg-white rounded-sm min-w-lg p-4 relative"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.3 }}
+          >
+            {/* Close Button */}
+            <button
+              className="absolute top-3 right-3 text-gray-400 hover:text-red-500 transition cursor-pointer"
+              onClick={() => setViewModal(false)}
+            >
+              <FiX className="w-5 h-5" />
+            </button>
 
-                            >
-                                X
-                            </button> 
+            {/* Modal Header */}
+            <h2 className="text-xl font-semibold text-gray-800 mb-4 text-center">
+              🧾 Order Payment Details
+            </h2>
 
-                            {/* Modal Content */}
-                            <h2 className="text-lg font-semibold mb-4">Order Payment Details</h2>
-                            <p><strong>Order ID:</strong> {orderdata?.id}</p>
-                            <p><strong>Name:</strong> {orderdata?.name}</p>
-                            <p><strong>Amount:</strong> {orderdata?.amount}</p>
-                            {/* Add more fields if needed */}
+            {/* Divider */}
+            <hr className="mb-4 border-t border-dashed border-gray-300" />
 
-                            <button
-                                className="mt-6 w-full bg-[#F27405] text-white py-2 rounded-lg hover:bg-orange-600"
-                                onClick={() => setViewModal(false)}
+            {/* Info Display */}
+            <div className="space-y-3 text-sm text-gray-700">
+              <div className="flex justify-between">
+                <span className="font-medium text-gray-500">Order ID:</span>
+                <span>{orderdata?.id || "N/A"}</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="font-medium text-gray-500">Customer:</span>
+                <span>{orderdata?.name || "N/A"}</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="font-medium text-gray-500">Product Name:</span>
+                <span>{orderdata?.productName || "N/A"}</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="font-medium text-gray-500">Amount:</span>
+                <span className="text-[#F27405] font-semibold">
+                  {orderdata?.amount || "0.00"}
+                </span>
+              </div>
+              <div className="flex justify-between">
+                <span className="font-medium text-gray-500">Status:</span>
+                <span
+                  className={`font-semibold ${
+                    orderdata?.status === "Paid"
+                      ? "text-green-600"
+                      : "text-red-500"
+                  }`}
+                >
+                  {orderdata?.status || "Pending"}
+                </span>
+              </div>
+            </div>
 
-                            >
-                                Close
-                            </button>
-                        </motion.div>
-                    </div>
-                )
-            }
-        </>
-    );
+            {/* Close Button */}
+            <button
+              className="mt-6 w-full bg-[#F27405] text-white py-2 rounded-xs font-medium hover:bg-button-hover transition-all duration-300 cursor-pointer"
+              onClick={() => setViewModal(false)}
+            >
+              Close
+            </button>
+          </motion.div>
+        </div>
+      )}
+    </>
+  );
 };
 
 export default OrderViewModal;

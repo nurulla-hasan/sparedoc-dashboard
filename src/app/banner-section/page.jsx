@@ -84,7 +84,7 @@ const BannerPage = () => {
                                             Edit
                                         </button>
                                     </div>
-                                </div>
+                                </div> 
                             ))
                         }
                     </div>
