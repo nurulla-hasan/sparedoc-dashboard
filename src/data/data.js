@@ -55,6 +55,7 @@ export const orders = [
     phone: "(+33)7005-55927",
     productName: "Spark Plug",
     amount: "$100",
+    status: "Paid",
     blocked: false,
   },
   {
@@ -64,6 +65,7 @@ export const orders = [
     phone: "(+33)7005-55928",
     productName: "Car Battery",
     amount: "$150",
+    status: "Paid",
     blocked: false,
   },
   {
@@ -73,6 +75,7 @@ export const orders = [
     phone: "(+33)7005-55929",
     productName: "Alternator",
     amount: "$120",
+    status: "Paid",
     blocked: true,
   },
   {
@@ -82,6 +85,7 @@ export const orders = [
     phone: "(+33)7005-55930",
     productName: "Brake Pads",
     amount: "$80",
+    status: "Paid",
     blocked: false,
   },
   {
@@ -91,6 +95,7 @@ export const orders = [
     phone: "(+33)7005-55931",
     productName: "Suspension Kit",
     amount: "$200",
+    status: "Paid",
     blocked: false,
   },
   {
@@ -100,6 +105,7 @@ export const orders = [
     phone: "(+33)7005-55932",
     productName: "Timing Belt",
     amount: "$90",
+    status: "Paid",
     blocked: true,
   },
   {
@@ -109,6 +115,7 @@ export const orders = [
     phone: "(+33)7005-55933",
     productName: "Fuel Filter",
     amount: "$40",
+    status: "Paid",
     blocked: false,
   },
   {
@@ -118,6 +125,7 @@ export const orders = [
     phone: "(+33)7005-55934",
     productName: "Oil Filter",
     amount: "$30",
+    status: "Paid",
     blocked: true,
   },
   {
@@ -127,6 +135,7 @@ export const orders = [
     phone: "(+33)7005-55935",
     productName: "Air Filter",
     amount: "$20",
+    status: "Paid",
     blocked: false,
   },
   {
@@ -136,6 +145,7 @@ export const orders = [
     phone: "(+33)7005-55936",
     productName: "Car Battery",
     amount: "$170",
+    status: "Paid",
     blocked: false,
   },
   {
@@ -145,6 +155,7 @@ export const orders = [
     phone: "(+33)7005-55937",
     productName: "Brake Fluid",
     amount: "$60",
+    status: "Paid",
     blocked: true,
   },
   {
@@ -154,6 +165,7 @@ export const orders = [
     phone: "(+33)7005-55938",
     productName: "Windshield Wipers",
     amount: "$25",
+    status: "Paid",
     blocked: false,
   },
   {
@@ -163,6 +175,7 @@ export const orders = [
     phone: "(+33)7005-55939",
     productName: "Spark Plug",
     amount: "$105",
+    status: "Paid",
     blocked: true,
   },
   {
@@ -172,6 +185,7 @@ export const orders = [
     phone: "(+33)7005-55940",
     productName: "Timing Belt",
     amount: "$90",
+    status: "Paid",
     blocked: false,
   },
   {
@@ -181,6 +195,7 @@ export const orders = [
     phone: "(+33)7005-55941",
     productName: "Air Filter",
     amount: "$30",
+    status: "Paid",
     blocked: false,
   }
 ];
