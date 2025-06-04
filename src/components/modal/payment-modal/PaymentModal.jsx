@@ -1,24 +1,29 @@
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+import { RxCross2 } from "react-icons/rx";
 
-const PaymentModal = ({ isPaymentModal, selectedUser, handleReject, handleAccept }) => {
+const PaymentModal = ({ isPaymentModal, setIsPaymentModal, selectedUser, handleReject, handleAccept }) => {
     return (
-        <AnimatePresence> 
+        <AnimatePresence>
             {isPaymentModal && selectedUser && (
                 <motion.div
                     className="fixed h-[100vh] inset-0 flex justify-center items-center bg-black/50 bg-opacity-50 z-50  backdrop-blur-xs"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }} 
+                    exit={{ opacity: 0 }}
                     transition={{ duration: 0.1 }}
                 >
                     <motion.div
-                        className="bg-white rounded-sm min-w-lg p-4"
+                        className="bg-white rounded-sm min-w-lg p-4 relative"
                         initial={{ scale: 0.8 }}
                         animate={{ scale: 1 }}
                         exit={{ scale: 0.8 }}
                         transition={{ duration: 0.1 }}
                     >
+                        <button onClick={() => setIsPaymentModal(false)} className="w-8 h-8 bg-amber-300 rounded-full absolute top-6 right-6 flex justify-center items-center cursor-pointer">
+                            <RxCross2 color="#ff0000"/>
+                        </button>
+
                         <div className="bg-[#de8c45] rounded-sm h-52 flex gap-3 justify-center items-center flex-col mb-4">
                             <Image src={selectedUser?.avatar} width={80} height={80} alt="avatar" className="rounded-full" />
                             <div className="flex flex-col justify-center items-center text-white">
@@ -27,7 +32,7 @@ const PaymentModal = ({ isPaymentModal, selectedUser, handleReject, handleAccept
                         </div>
                         <div className="mb-10 px-6">
                             <div className="space-y-4 *:space-y-1">
-                                <div>
+                                <div> 
                                     <h3 className="text-md font-medium">Name On Card</h3>
                                     <p className="text-sm">{selectedUser.name}</p>
                                 </div>
@@ -47,7 +52,7 @@ const PaymentModal = ({ isPaymentModal, selectedUser, handleReject, handleAccept
                                 onClick={handleReject}
                                 className="border text-black py-[7px] w-full rounded-sm cursor-pointer"
                             >
-                                Decline
+                                Reject
                             </button>
                             <button
                                 onClick={handleAccept}

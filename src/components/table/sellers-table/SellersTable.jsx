@@ -1,62 +1,74 @@
-import { MdBlockFlipped } from "react-icons/md";
-import { LuUserCheck } from "react-icons/lu";
-
-const SellersTable = ({ paged, handleBlock, handleAccept }) => {
+import { MdBlockFlipped, MdOutlineArrowOutward } from "react-icons/md";
+// import { RxCross2 } from "react-icons/rx";
+import { FaCircle } from "react-icons/fa6";
+// import { IoCheckmarkDoneOutline } from "react-icons/io5";
+const SellersTable = ({ paged, openStatusModal }) => {
     return (
         <>
             <table className="min-w-full text-sm ">
                 <thead className="bg-[#FEF1E6] text-[#734D2C] sticky top-0">
                     <tr className="*:font-medium *:text-[16px]">
                         <th className="px-4 py-3 text-left">S.no </th>
-                        <th className="px-4 py-3 text-left">User Name</th>
+                        <th className="px-4 py-3 text-left">Seller Name</th>
                         <th className="px-4 py-3 text-left">Contact</th>
                         <th className="px-4 py-3 text-left">Email</th>
                         <th className="px-4 py-3 text-left">Location</th>
+                        <th className="px-4 py-3 text-left">Status</th>
                         <th className="px-4 py-3 text-center">Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {paged.map((user) => (
+                    {paged.map((seller, index) => (
                         <tr
-                            key={user.id}
+                            key={seller.id}
                             className={`hover:bg-[#FEF1E6] transition-all duration-200 *:text-[15px] *:text-[#636363]`}>
-                            <td className="px-4 py-3">{user.id}</td>
+                            <td className="px-4 py-3">{index + 1}</td>
                             <td className="px-4 py-3 flex items-center gap-2">
-                                <img src={user.avatar} alt="" className="w-9 h-9 rounded-full" />
-                                {user.name}
+                                <img src={seller.avatar} alt="" className="w-9 h-9 rounded-full" />
+                                {seller.name}
                             </td>
-                            <td className="px-4 py-3">{user.phone}</td>
-                            <td className="px-4 py-3">{user.email}</td>
-                            <td className="px-4 py-3">{user.location}</td>
-                            <td className="px-4 py-3 flex items-center justify-center gap-2">
+                            <td className="px-4 py-3">{seller.phone}</td>
+                            <td className="px-4 py-3">{seller.email}</td>
+                            <td className="px-4 py-3">{seller.location}</td>
+                            <td className="px-4 py-3">
                                 {
-                                    !user.accepted && (
-                                        <button
-                                            onClick={() => handleBlock(user.id)}
-                                            className={`px-2 py-1 flex items-center gap-1 justify-center rounded-sm cursor-pointer transition-all duration-300 ${user.blocked
-                                                    ? "bg-red-100 text-red-500 hover:bg-red-200 border border-red-300"
-                                                    : "bg-[#fff0e4] text-[#F27405] hover:bg-[#FFE6D6] border border-[#FBB07F]"
-                                                }`}
-                                        >
-                                            <MdBlockFlipped size={20} />
-                                            {user.blocked && (
-                                                <span className="text-sm font-medium">Blocked</span>
-                                            )}
-                                        </button>
-
-                                    )
+                                    seller.status === "approved" ?
+                                        <span className="flex items-center gap-2 font-medium text-[#00B047]">
+                                            <FaCircle size={15} /> Approved
+                                        </span>
+                                        : seller.status === "pending" ?
+                                            <span className="flex items-center gap-2 font-medium text-[#ffaf69]">
+                                                <FaCircle size={15} /> Pending
+                                            </span>
+                                            : seller.status === "suspended" ?
+                                                <span className="flex items-center gap-2 font-medium text-[#f20505]">
+                                                    <FaCircle size={15} /> Suspended
+                                                </span>
+                                                :
+                                                <span className="flex items-center gap-2 font-medium text-[#f20505]">
+                                                    <FaCircle size={15} /> Rejected
+                                                </span>
                                 }
-                                {!user.blocked && (
-                                    <button
-                                        onClick={() => handleAccept(user.id)}
-                                        className={`px-2 py-1 flex items-center gap-1 justify-center rounded-sm cursor-pointer transition-all duration-300 ${user.accepted
-                                            ? "bg-[#e0f7e9] text-[#00B047] hover:bg-[#c5edd4] border border-[#00b0464b]"
-                                            : "bg-[#FDF6E6] text-[#A55B00] hover:bg-[#f3ead3] border border-[#f2740533]"} `}
-                                    >
-                                        <LuUserCheck size={20} />
-                                    </button>
-                                )}
-
+                            </td>
+                            <td className="px-4 py-3 flex items-center justify-center gap-2">
+                                <button
+                                    onClick={() => openStatusModal(seller)}
+                                    className={`flex items-center gap-1 justify-center rounded-sm cursor-pointer transition-all duration-300 disabled:cursor-not-allowed py-1 px-2
+                                       bg-[#f0f0f0] border border-gray-400`}
+                                >
+                                    <span>
+                                        {
+                                            // seller.status === "pending" ?
+                                            <MdOutlineArrowOutward size={24} />
+                                            // : seller.status === "approved" ?
+                                            // <IoCheckmarkDoneOutline color="#00B047" size={24} />
+                                            // : seller.status === "rejected" ?
+                                            // <RxCross2 size={24} className="text-red-500" />
+                                            // :
+                                            // <MdBlockFlipped size={24} className="text-red-500" />
+                                        }
+                                    </span>
+                                </button>
                             </td>
                         </tr>
                     ))}

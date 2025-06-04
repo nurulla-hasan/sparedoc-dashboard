@@ -5,62 +5,60 @@ import { sellersDetails } from "@/data/data";
 import { useState } from "react";
 import { FiSearch } from "react-icons/fi";
 import { motion } from "framer-motion";
-import toast from "react-hot-toast";
 import SellersTable from "@/components/table/sellers-table/SellersTable";
-
+import SellerModal from "@/components/modal/seller-modal/SellerModal";
+import toast from 'react-hot-toast';
 
 export default function SellersDetails() {
     const pageSize = 10;
     const [page, setPage] = useState(1);
     const [query, setQuery] = useState("");
     const [data, setData] = useState(sellersDetails);
+    const [isSellerModal, setisSellerModal] = useState(false);
+    const [selectedSeller, setSelectedSeller] = useState(null); // setIelectedSeller কে setSelectedSeller
+    const [loading, setLoading] = useState(false);
 
-    /* block / unblock toggle */
-    const handleBlock = (id) => {
-        const existingUser = data.find((user) => user.id === id);
-        if (existingUser.blocked) {
-            toast.error(`${existingUser.name.slice(0, 8)}... is already blocked`)
-            return
+    /* Handle Status Change (Approved, Suspended, Reject) */
+    const handleStatusChange = async (sellerId, newStatus) => {
+        setLoading(true); 
+        try {
+            //  const response = await axios.put(`/api/sellers/${sellerId}/status`, { status: newStatus });
+            const updatedData = data.map((seller) =>
+                seller.id === sellerId ? { ...seller, status: newStatus } : seller
+            );
+            setData(updatedData);
+            const sellerToUpdate = data.find(seller => seller.id === sellerId);
+            toast.success(`${sellerToUpdate?.name} has been ${newStatus.charAt(0).toUpperCase() + newStatus.slice(1)}.`);
+
+            setisSellerModal(false);
+            setSelectedSeller(null); 
+
+        } catch (error) {
+            console.error("Failed to update seller status:", error);
+            toast.error("Failed to update seller status.");
+        } finally {
+            setLoading(false);
         }
-        const updated = data.map((user) =>
-            user.id === id ? { ...user, blocked: true } : user
-        );
-        toast.success(`${existingUser.name.slice(0, 8)}... has been Blocked`);
-        setData(updated);
     };
 
-    /* Accept / Reject toggle */
-    const handleAccept = (id) => {
-
-        const existingUser = data.find((user) => user.id === id);
-        if (existingUser.accepted) {
-            toast.error(`${existingUser.name.slice(0, 8)}... is already accepted`);
-            return
-        }
-        const updated = data.map((user) =>
-            user.id === id ? { ...user, accepted: true } : user
-        )
-        toast.success(`${existingUser.name.slice(0, 8)}... has been Accepted`);
-        setData(updated);
-    }
-
+    const openStatusModal = (seller) => {
+        setSelectedSeller(seller); 
+        setisSellerModal(true);
+    };
 
     /* filter + paginate */
-    const filtered = data.filter((user) => {
+    const filtered = data.filter((seller) => {
         const searchText = query.toLowerCase();
         return (
-            user?.name.toLowerCase().includes(searchText)
-            ||
-            user?.location.toLowerCase().includes(searchText)
-        )
-    }
-    );
+            seller?.name.toLowerCase().includes(searchText) ||
+            seller?.location.toLowerCase().includes(searchText)
+        );
+    });
     const pageCount = Math.ceil(filtered.length / pageSize);
     const paged = filtered.slice((page - 1) * pageSize, page * pageSize);
 
     return (
         <PageContainer>
-
             {/* header + search */}
             <motion.div
                 className="flex justify-between mb-4"
@@ -68,7 +66,7 @@ export default function SellersDetails() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4 }}
             >
-                <h1 className="text-xl font-medium">All User list</h1>
+                <h1 className="text-xl font-medium">All Seller List</h1>
                 <div className="relative w-72">
                     <FiSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-[#ffbc89]" size={18} />
                     <input
@@ -90,7 +88,7 @@ export default function SellersDetails() {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.2, duration: 0.5 }}
             >
-                <SellersTable paged={paged} handleBlock={handleBlock} handleAccept={handleAccept} />
+                <SellersTable paged={paged} openStatusModal={openStatusModal} />
             </motion.div>
 
             {/* pagination */}
@@ -108,6 +106,15 @@ export default function SellersDetails() {
                     <Pagination page={page} setPage={setPage} pageCount={pageCount} />
                 </div>
             </motion.div>
+
+            {/* Modal */}
+            <SellerModal
+                isSellerModal={isSellerModal}
+                setisSellerModal={setisSellerModal}
+                selectedSeller={selectedSeller}
+                onStatusChange={handleStatusChange}
+                loading={loading}
+            />
         </PageContainer>
     );
 }

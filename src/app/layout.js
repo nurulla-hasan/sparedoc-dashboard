@@ -26,6 +26,7 @@ const menuItems = [
 ];
 const settingMenu = [
   { label: "Profile", href: "/profile" },
+  { label: "Admin Roles", href: "/roles-permissions" },
   { label: "Contact-US", href: "/contact-us" },
   { label: "About Us", href: "/about" },
   { label: "Our Team", href: "/our-team" },

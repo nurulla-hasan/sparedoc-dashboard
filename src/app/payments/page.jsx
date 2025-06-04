@@ -38,7 +38,7 @@ export default function PaymentDetails() {
     toast.error(`${updatedUser.name.split(" ")[0]} has been marked as Failed`);
 
     setData(updated);
-    setIsPaymentModal(false);
+    setIsPaymentModal(false); 
   };
 
   const handleAccept = () => {
