@@ -15,7 +15,7 @@ export default function Home() {
         <div className="text-[#2B2F29]">
           <div className="flex gap-5">
             {/** Card Data */}
-            {cardData.map((item, idx) => (
+            {cardData.map((item, idx) => ( 
               <motion.div
                 key={idx}
                 initial={{ opacity: 0, scale: 0.9 }}

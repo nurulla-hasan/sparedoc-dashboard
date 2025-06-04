@@ -1,6 +1,6 @@
 export const cardData = [
-  { title: "Total Users", value: "20.10", img: "/images/card-user.svg" },
-  { title: "Total Sellers", value: "25.2", img: "/images/card-earning.svg" },
+  { title: "Active Users", value: "20.10", img: "/images/card-user.svg" },
+  { title: "Total Products", value: "25.2", img: "/images/card-earning.svg" },
   { title: "Total Earnings", value: "$150.10", img: "/images/card-seller.svg" },
 ]
 
@@ -644,12 +644,14 @@ export const heroData = [
     title: "Home Page Hero",
     voucher: "Up to 10% off Voucher",
     image: "/images/hero.png",
+    enabled: true
   },
   {
     id: "2",
     title: "My Account Hero",
     voucher: "Up to 10% off Voucher",
     image: "/images/hero.png",
+    enabled: true
   }
 ];
 
