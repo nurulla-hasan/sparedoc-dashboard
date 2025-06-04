@@ -1,6 +1,7 @@
 import { FaCircle } from "react-icons/fa";
 import { MdOutlineArrowOutward } from "react-icons/md";
 import { IoCheckmarkDoneOutline } from "react-icons/io5";
+import { RxCross2 } from "react-icons/rx";
 
 const PaymentTable = ({ paged, handleModal }) => {
     return (
@@ -30,31 +31,37 @@ const PaymentTable = ({ paged, handleModal }) => {
                             <td className="px-4 py-3">{user.amount}</td>
                             <td className="px-4 py-3">
                                 {
-                                    user.paymentStatus ?
+                                    user.paymentStatus === "paid" ?
                                         <span className="flex items-center gap-2 font-medium text-[#00B047]">
                                             <FaCircle size={15} /> Paid
                                         </span>
-                                        :
-                                        <span className="flex items-center gap-2 font-medium text-[#F27405]">
-                                            <FaCircle size={15} /> Pending
-                                        </span>
+                                        : user.paymentStatus === "pending" ?
+                                            <span className="flex items-center gap-2 font-medium text-[#ffaf69]">
+                                                <FaCircle size={15} /> Pending
+                                            </span>
+                                            :
+                                            <span className="flex items-center gap-2 font-medium text-[#f20505]">
+                                                <FaCircle size={15} /> Failed
+                                            </span>
+
                                 }
                             </td>
                             <td className="px-4 py-3 flex justify-center">
                                 <button
                                     onClick={() => handleModal(user)}
-                                    disabled={user.paymentStatus}
-                                    className={`flex items-center gap-1 justify-center rounded-sm cursor-pointer transition-all duration-300  disabled:cursor-not-allowed ${user.paymentStatus ? 'bg-green-100 border-green-500 border py-1 px-2':'bg-[#f0f0f0] border border-gray-400 py-1 px-2'}`}
+                                    disabled={user.paymentStatus !== "pending"}
+                                    className={`flex items-center gap-1 justify-center rounded-sm cursor-pointer transition-all duration-300  disabled:cursor-not-allowed ${user.paymentStatus === "paid" ? 'bg-green-100 border-green-500 border py-1 px-2'
+                                        : user.paymentStatus === "pending" ?
+                                            'bg-[#f0f0f0] border border-gray-400 py-1 px-2' : "bg-red-100 border border-red-400 py-1 px-2"}`}
                                 >
                                     <span>
                                         {
-                                            user.paymentStatus
+                                            user.paymentStatus === "pending"
                                                 ?
-                                                <IoCheckmarkDoneOutline
-                                                    color="#00B047"
-                                                    size={24} />
-                                                :
                                                 <MdOutlineArrowOutward size={24} />
+                                                : user.paymentStatus === "paid" ?
+                                                    <IoCheckmarkDoneOutline color="#00B047" size={24} />
+                                                    : <RxCross2 size={24} className="text-red-500"/>
                                         }
                                     </span>
                                 </button>

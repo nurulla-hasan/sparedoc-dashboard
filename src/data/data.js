@@ -499,7 +499,7 @@ export const paymentDetails = [
     avatar: "/images/avatar.png",
     email: "weaver@example.com",
     amount: "$100",
-    "paymentStatus": false,
+    "paymentStatus": "pending",
   },
   {
     id: "#696589",
@@ -507,7 +507,7 @@ export const paymentDetails = [
     avatar: "/images/avatar.png",
     email: "ennings@example.com",
     amount: "$100",
-    "paymentStatus": false,
+    "paymentStatus":"pending",
   },
   {
     id: "#526587",
@@ -515,7 +515,7 @@ export const paymentDetails = [
     avatar: "/images/avatar.png",
     email: "cruz@example.com",
     amount: "$100",
-    "paymentStatus": false,
+    "paymentStatus": "paid",
   },
   {
     id: "#526521",
@@ -523,7 +523,7 @@ export const paymentDetails = [
     avatar: "/images/avatar.png",
     email: "lawson@example.com",
     amount: "$100",
-    "paymentStatus": false,
+    "paymentStatus": "paid",
   },
   {
     id: "#256584",
@@ -531,7 +531,7 @@ export const paymentDetails = [
     avatar: "/images/avatar.png",
     email: "lawson@example.com",
     amount: "$100",
-    "paymentStatus": false,
+    "paymentStatus": "pending",
   },
   {
     id: "#526522",
@@ -539,7 +539,7 @@ export const paymentDetails = [
     avatar: "/images/avatar.png",
     email: "baker@example.com",
     amount: "$100",
-    "paymentStatus": false,
+    "paymentStatus": "failed",
   },
   {
     id: "#526589",
@@ -547,7 +547,7 @@ export const paymentDetails = [
     avatar: "/images/avatar.png",
     email: "rivera@example.com",
     amount: "$100",
-    "paymentStatus": false,
+    "paymentStatus": "failed",
   },
   {
     id: "#526523",
@@ -555,7 +555,7 @@ export const paymentDetails = [
     avatar: "/images/avatar.png",
     email: "reid@example.com",
     amount: "$100",
-    "paymentStatus": false,
+    "paymentStatus": "pending",
   },
   {
     id: "#200257",
@@ -563,7 +563,7 @@ export const paymentDetails = [
     avatar: "/images/avatar.png",
     email: "sanders@example.com",
     amount: "$100",
-    "paymentStatus": false,
+    "paymentStatus": "pending",
   },
   {
     id: "#526534",
@@ -571,7 +571,7 @@ export const paymentDetails = [
     avatar: "/images/avatar.png",
     email: "jennings@example.com",
     amount: "$100",
-    "paymentStatus": false,
+    "paymentStatus": "pending",
   },
   {
     id: "#105986",
@@ -579,7 +579,7 @@ export const paymentDetails = [
     avatar: "/images/avatar.png",
     email: "young@example.com",
     amount: "$100",
-    "paymentStatus": false,
+    "paymentStatus": "pending",
   },
   {
     id: "#845911",
@@ -587,7 +587,7 @@ export const paymentDetails = [
     avatar: "/images/avatar.png",
     email: "russell@example.com",
     amount: "$100",
-    "paymentStatus": false,
+    "paymentStatus": "pending",
   },
   {
     id: "#258744",
@@ -595,7 +595,7 @@ export const paymentDetails = [
     avatar: "/images/avatar.png",
     email: "hawkins@example.com",
     amount: "$100",
-    "paymentStatus": false,
+    "paymentStatus": "pending",
   },
   {
     id: "#785214",
@@ -603,7 +603,7 @@ export const paymentDetails = [
     avatar: "/images/avatar.png",
     email: "howard@example.com",
     amount: "$100",
-    "paymentStatus": false,
+    "paymentStatus": "pending",
   },
   {
     id: "#369852",
@@ -611,7 +611,7 @@ export const paymentDetails = [
     avatar: "/images/avatar.png",
     email: "nguyen@example.com",
     amount: "$100",
-    "paymentStatus": false,
+    "paymentStatus": "pending",
   },
 ];
 

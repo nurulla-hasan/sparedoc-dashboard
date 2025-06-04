@@ -27,28 +27,31 @@ export default function PaymentDetails() {
   const handleModal = (user) => {
     setSelectedUser(user)
     setIsPaymentModal(true)
-    console.log('object')
   }
 
   const handleReject = () => {
-    setIsPaymentModal(false)
-  }
-
-  const handleAccept = () => {
     const updated = data.map((user) =>
-      user.id === selectedUser.id ? { ...user, paymentStatus: !user.paymentStatus } : user
+      user.id === selectedUser.id ? { ...user, paymentStatus: "failed" } : user
     );
     const updatedUser = updated.find((user) => user.id === selectedUser.id);
 
-    if (updatedUser.blocked) {
-      toast.success(`${updatedUser.name.slice(0, 8)}... has been Blocked`)
-    } else {
-      toast.success(`${updatedUser.name.slice(0, 8)}... has been Unblocked`)
-    }
-    setData(updated);
+    toast.error(`${updatedUser.name.split(" ")[0]} has been marked as Failed`);
 
-    setIsPaymentModal(false)
-  }
+    setData(updated);
+    setIsPaymentModal(false);
+  };
+
+  const handleAccept = () => {
+    const updated = data.map((user) =>
+      user.id === selectedUser.id ? { ...user, paymentStatus: "paid" } : user
+    );
+    const updatedUser = updated.find((user) => user.id === selectedUser.id);
+
+    toast.success(`${updatedUser.name.split(" ")[0]} has been marked as Paid`);
+    setData(updated);
+    setIsPaymentModal(false);
+  };
+
 
 
   const filtered = data.filter((user) =>
